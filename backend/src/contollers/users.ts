@@ -1,5 +1,5 @@
 import express from 'express';
-import { deleteUserById, getUsers } from '../db/users';
+import { deleteUserById, getUserById, getUsers } from '../db/users';
 
 export const getAllUsers = async (req: express.Request, res: express.Response) => {
     try {
@@ -18,6 +18,26 @@ export const deleteUser = async (req: express.Request, res: express.Response) =>
         
         return res.json(deletedUser);
     } catch (error) {
+        console.log(error);
+        return res.sendStatus(400);
+    }
+}
+
+export const updateUserProgress = async (req: express.Request, res: express.Response) => {
+    try{
+        const { id } = req.params;
+        const { progress } = req.body;
+
+        if (!progress) {
+            return res.sendStatus(400);
+        }
+
+        const user = await getUserById(id);
+        user.progress = progress;
+        await user.save();
+
+        return res.status(200).json(user).end();
+    }catch(error){
         console.log(error);
         return res.sendStatus(400);
     }

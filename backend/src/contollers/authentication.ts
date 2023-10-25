@@ -30,7 +30,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
         res.cookie('TEST-AUTH', user.authentication.sessionToken, {domain: 'localhost', path: '/'})
 
-        return res.status(200).json(user).end()
+        return res.status(200).json({id: user.id, username: user.username, progress: user.progress}).end()
 
     } catch (error) {
         console.log(error);
@@ -53,9 +53,11 @@ export const register = async (req: express.Request, res: express.Response) => {
         }
 
         const salt = random();
+        const progress = 0;
         const user = await createUser({
             email,
             username,
+            progress,
             authentication: {
                 salt,
                 password: authentication(salt, password),

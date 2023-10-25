@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true },
     email: { type: String, required: true},
+    progress: {type: Number, required: true},
     authentication: {
         password: { type: String, required: true, select: false }, // select = false, avoids fetching auth objects when fetching users
         salt: {type: String, select: false },

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BasePage from './BasePage';
 import '../assets/css/forms.css';
 import logo from '../assets/img/CyberEd.png';
+import Cookies from 'js-cookie';
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -29,7 +31,12 @@ function LoginPage() {
       return;
     }
 
-    // Handle successful login here
+    // Handles successful login here
+    const data = await response.json();
+    Cookies.set('username', data.username, { expires: 7 }); 
+    Cookies.set('progress', data.progress, { expires: 7 }); 
+
+    navigate('/');
   };
 
   useEffect(() => {

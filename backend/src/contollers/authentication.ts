@@ -56,10 +56,6 @@ export const register = async (req: express.Request, res: express.Response) => {
             errors.push('Password should include uppercase and lowercase letters, numbers, and special characters.');
         }
 
-        if (password === username) {
-            errors.push('Password should not be the same as the username.');
-        }
-
         if (password.toLowerCase().includes(username.toLowerCase())) {
             errors.push('Password should not contain the username.');
         }
@@ -67,7 +63,7 @@ export const register = async (req: express.Request, res: express.Response) => {
         const existingUser = await getUserByEmail(email);
 
         if (existingUser) {
-            errors.push('This username is taken.');
+            errors.push('This email is already registered.');
         }
 
         if (errors.length > 0) {

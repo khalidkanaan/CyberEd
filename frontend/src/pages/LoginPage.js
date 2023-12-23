@@ -63,8 +63,8 @@ function LoginPage() {
 
   return (
     <BasePage>
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleSubmit}>
+      <div className="lr-container">
+        <form className="lr-form" onSubmit={handleSubmit}>
           <img className="logo-class" src={logo} alt="CyberEd.png"/>
 
             <div className="input-container">

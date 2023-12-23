@@ -42,9 +42,14 @@ export const register = async (req: express.Request, res: express.Response) => {
     try {
         const { username, password, email } = req.body;
         let errors = [];
+        const existingUser = await getUserByEmail(email);
 
         if (!username || !password || !email ) {
-            errors.push('Please provide a username, password and email.');
+            return res.status(400).json('Please provide a username, password and email.');
+        }
+
+        if (existingUser) {
+            return res.status(400).json('This email is already registered.');
         }
 
         // Validate the password
@@ -52,18 +57,24 @@ export const register = async (req: express.Request, res: express.Response) => {
             errors.push('Password length should be more than 9 characters long.');
         }
 
-        if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[\W_]/.test(password)) {
-            errors.push('Password should include uppercase and lowercase letters, numbers, and special characters.');
+        if (!/[a-z]/.test(password)) {
+            errors.push('Password should include at least one lowercase letter.');
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            errors.push('Password should include at least one uppercase letter.');
+        }
+
+        if (!/[0-9]/.test(password)) {
+            errors.push('Password should include at least one number.');
+        }
+
+        if (!/[\W_]/.test(password)) {
+            errors.push('Password should include at least one special character.');
         }
 
         if (password.toLowerCase().includes(username.toLowerCase())) {
             errors.push('Password should not contain the username.');
-        }
-
-        const existingUser = await getUserByEmail(email);
-
-        if (existingUser) {
-            errors.push('This email is already registered.');
         }
 
         if (errors.length > 0) {

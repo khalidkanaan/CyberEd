@@ -89,3 +89,17 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.input-container.error input {
+  border-color: red;
+}
+
+.input-container.error input:focus {
+  border-color: red;
+  outline-color: red;
+}
+
+.password-errors {
+  color: red;
+  font-size: small;
+}

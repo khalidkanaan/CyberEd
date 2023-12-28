@@ -4,6 +4,7 @@ import BasePage from './BasePage';
 import '../assets/css/forms.css';
 import logo from '../assets/img/CyberEd.png';
 import Cookies from 'js-cookie';
+import ScrollingBackground from '../components/ScrollingBackground';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -63,27 +64,29 @@ function LoginPage() {
 
   return (
     <BasePage>
-      <div className="lr-container">
-        <form className="lr-form" onSubmit={handleSubmit}>
-          <img className="logo-class" src={logo} alt="CyberEd.png"/>
+      <ScrollingBackground>
+        <div className="lr-container">
+          <form className="lr-form" onSubmit={handleSubmit}>
+            <img className="logo-class" src={logo} alt="CyberEd.png"/>
 
-            <div className="input-container">
-              <label>EMAIL</label>
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+              <div className="input-container">
+                <label>EMAIL</label>
+                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+              </div>
+              <div className="input-container">
+                <label>PASSWORD</label>
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+              </div>
+            <button type="submit">LOGIN</button>
+            <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
+              {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
             </div>
-            <div className="input-container">
-              <label>PASSWORD</label>
-              <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-            </div>
-          <button type="submit">LOGIN</button>
-          <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
-            {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
-          </div>
-          <Link to="/register">
-            No account? Sign up here
-          </Link>
-        </form>
-      </div>
+            <Link to="/register">
+              No account? Sign up here
+            </Link>
+          </form>
+        </div>
+      </ScrollingBackground>
     </BasePage>
   );
 }

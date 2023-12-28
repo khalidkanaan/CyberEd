@@ -1,0 +1,20 @@
+
+.scrolling-background {
+    position: relative;
+    /* Other styles like height, width etc. */
+  }
+  
+  .scrolling-background video {
+    width: 100%; /* Ensure the video covers the background */
+    height: 100%; /* Adjust as needed */
+    object-fit: cover; /* This will ensure that the video covers the full area */
+  }
+  
+  .centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Add more styles if needed */
+  }
+  

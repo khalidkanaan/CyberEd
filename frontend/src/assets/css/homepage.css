@@ -11,7 +11,7 @@
     height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .card {
@@ -24,7 +24,7 @@
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); /* make card move */
     box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
 }
 
@@ -39,6 +39,7 @@
     color: white;
     border-radius: 50%;
     width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,67 +48,26 @@
 
 .card > .row > .description {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    overflow: hidden;
-    height: 80px;
-    width: 520px;
-    opacity: 0;
-    transform: translateY(30px);
+    height: 15em;
+    width: 28em;
     transition-delay: .3s;
     transition: all .3s ease;
 }
 
 .description p {
     color: #b0b0ba;
-    padding-top: 5px;
 }
 
 .description h4 {
     text-transform: uppercase;
 }
 
-input {
+.module-input {
     display: none;
 }
 
-input:checked + label {
+.module-input:checked + label {
     width: 600px;
 }
 
-input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.card[for="c1"] {
-    background-image: url('../img/bg1.jpg');
-}
-.card[for="c2"] {
-    background-image: url('../img/bg1.jpg');
-}
-.card[for="c3"] {
-    background-image: url('../img/bg1.jpg');
-}
-.card[for="c4"] {
-    background-image: url('../img/bg1.jpg');
-}
-
-.horizontal-card {
-    display: flex; /* Use flexbox for horizontal layout */
-    align-items: center; /* Align items vertically */
-    padding: 10px;
-    margin-top: 20px; /* Add some margin above the horizontal card */
-    background-color: #f0f0f0; /* Background color for the card */
-    border-radius: 8px; /* Optional: rounded corners */
-  }
-  
-  .horizontal-card .icon {
-    font-size: 2rem; /* Adjust icon size */
-    margin-right: 15px; /* Space between icon and description */
-  }
-  
-  .horizontal-card .description {
-    flex-grow: 1; /* Allows the description to take up remaining space */
-  }
-  

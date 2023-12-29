@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/BasePage.css';
 import { isCookiePresent, handleLogout } from '../assets/js/helpers.js'; // Add handleLogout here
+import ScrollingBackground from '../components/ScrollingBackground';
 import logo from '../assets/img/logo-white.png';
 import profile from '../assets/img/drinking.gif';
 import Cookies from 'js-cookie';
@@ -36,9 +37,11 @@ function BasePage(props) {
           </div>
         )}
       </div>
-      <div>
-        {props.children}
-      </div>
+      <ScrollingBackground>
+        <div style={{ paddingTop: '60px' }}>
+          {props.children}
+        </div>
+      </ScrollingBackground>
     </div>
   );
 }

@@ -19,19 +19,15 @@ code {
 /*
   Header
   ============================================================================= */
-.header {
+  .header {
     display: flex;
     justify-content: space-between;
     background-color: navy;
     color: white;
     padding: 10px;
-     
-}
-
-.absolute-top-right {
-    position: absolute;
-    top: 0;
-    right: 50px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .logo {
@@ -96,7 +92,7 @@ code {
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
-    margin: 4px 2px;
+    margin: 4px 35px;
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 4px;
@@ -108,19 +104,23 @@ code {
 }
  
 
-
-/*Yahya was here*/
- 
-/*Yahya gone*/
+/*
+  Video Background
+  ============================================================================= */
 .scrolling-background {
     position: relative;
-    /* Other styles like height, width etc. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
   
   .scrolling-background video {
-    width: 100%; /* Ensure the video covers the background */
-    height: 100%; /* Adjust as needed */
-    object-fit: cover; /* This will ensure that the video covers the full area */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
   }
   
   .centered-content {
@@ -128,6 +128,5 @@ code {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Add more styles if needed */
   }
   

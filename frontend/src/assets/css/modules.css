@@ -1,0 +1,52 @@
+.new-window {
+    position: absolute;
+    top: 80px;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    background: transparent;
+}
+
+.module-window {
+    position: absolute;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom right, #3498db, #9b59b6);
+    border: 5px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    /* Animation */
+    animation: fadeInAndZoom 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes fadeInAndZoom  {
+    0% {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.back-button {
+    position: absolute;
+    padding: 0.25%;
+    width: 120px;
+    height: 68px;
+    top: 0;
+    left: 0;
+}
+
+.next-button {
+    position: absolute;
+    padding: 0.25%;
+    width: 120px;
+    height: 68px;
+    top: 0;
+    right: 0;
+}

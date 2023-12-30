@@ -4,7 +4,6 @@ import BasePage from './BasePage';
 import '../assets/css/forms.css';
 import logo from '../assets/img/CyberEd.png';
 import Cookies from 'js-cookie';
-import ScrollingBackground from '../components/ScrollingBackground';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -64,7 +63,6 @@ function LoginPage() {
 
   return (
     <BasePage>
-      <ScrollingBackground>
         <div className="lr-container">
           <form className="lr-form" onSubmit={handleSubmit}>
             <img className="logo-class" src={logo} alt="CyberEd.png"/>
@@ -86,7 +84,6 @@ function LoginPage() {
             </Link>
           </form>
         </div>
-      </ScrollingBackground>
     </BasePage>
   );
 }

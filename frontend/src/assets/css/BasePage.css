@@ -1,37 +1,50 @@
-body {
-margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
 }
-  
+
+body {
+  background-image: url('../img/bg2-new.png');
+  background-size: cover;
+  animation: animatedBackground 500s linear infinite alternate;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .App {
     text-align: center;
 }
 
+.base-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: '60px';
+}
+
 /*
   Header
   ============================================================================= */
 .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: navy;
-    color: white;
-    padding: 10px;
-     
-}
-
-.absolute-top-right {
-    position: absolute;
-    top: 0;
-    right: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: navy;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .logo {
@@ -42,33 +55,33 @@ code {
   Drop Down
   ============================================================================= */
 .user-icon {
-    width: 50px; 
-    height: 50px;
+  width: 50px; 
+  height: 50px;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer; /* Add this line */
-    right: 50px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer; /* Add this line */
+  right: 50px;
 }
   
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: -50px;
-    cursor: pointer;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: -50px;
+  cursor: pointer;
 }
   
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
   
 .dropdown-content a:hover {background-color: #ddd;}
@@ -79,55 +92,45 @@ code {
   
 
 /*
-  Log In
+  Log In Button
   ============================================================================= */
-
-.login-button {
-    align-self: center; 
+.img-container {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 3px 8px 3px 8px;
+  gap: 10px;
+  margin-right: 1%;
+  white-space: nowrap;
+  transition: border-color 0.3s, color 0.3s;
 }
 
-.login-button button {
-    background-color: #0D7377; /* Cyberpunk green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 4px;
+.img-container:hover {
+  border-color: beige;
+  color: beige;
 }
 
-.login-button button:hover {
-    background-color: #14FFEC; /* Lighter green */
-    color: black;
+.login-text {
+  font-size: 100%;
+  font-family: 'Brush Script MT', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transform: none;
 }
- 
 
+.login-img {
+  width: 50px;
+  border-radius: 5px;
+  transition: filter 0.3s, clip-path 0.7s, transform 0.7s;
+  clip-path: polygon(28% 20%, 35% 39%, 43% 52%, 52% 65%, 74% 81%, 100% 88%, 100% 100%, 0 100%, 0 0, 24% 0);
+}
 
-/*Yahya was here*/
- 
-/*Yahya gone*/
-.scrolling-background {
-    position: relative;
-    /* Other styles like height, width etc. */
-  }
-  
-  .scrolling-background video {
-    width: 100%; /* Ensure the video covers the background */
-    height: 100%; /* Adjust as needed */
-    object-fit: cover; /* This will ensure that the video covers the full area */
-  }
-  
-  .centered-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Add more styles if needed */
-  }
-  
+.img-container:hover .login-img {
+  filter: sepia(0.5) saturate(100%);
+  clip-path: polygon(62% 1%, 77% 6%, 88% 15%, 94% 25%, 99% 39%, 100% 49%, 100% 100%, 0 100%, 0 0, 24% 0);
+  transform: rotate(360deg);
+}

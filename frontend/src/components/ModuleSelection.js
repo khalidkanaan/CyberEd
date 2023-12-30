@@ -21,7 +21,7 @@ function ModuleSelection() {
       e.preventDefault();
       setShowGif(true);
       clearTimeout(timerRef.current); // Clear the existing timer
-      timerRef.current = setTimeout(() => setShowGif(false), 5000); // Store the new timer id
+      timerRef.current = setTimeout(() => setShowGif(false), 3000); // Store the new timer id
     }
   };
 

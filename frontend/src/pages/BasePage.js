@@ -1,10 +1,9 @@
-// BasePage.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/css/BasePage.css';
+import '../assets/css/basepage.css';
 import { isCookiePresent, handleLogout } from '../assets/js/helpers.js'; // Add handleLogout here
-import ScrollingBackground from '../components/ScrollingBackground';
 import logo from '../assets/img/logo-white.png';
+import loginImage from '../assets/img/login-image.png';
 import profile from '../assets/img/drinking.gif';
 import Cookies from 'js-cookie';
 
@@ -22,8 +21,9 @@ function BasePage(props) {
           <img src={logo} alt="Logo" className="logo"/>
         </Link>
         {!isLoggedIn ? (
-          <Link to="/login" className="login-button">
-            <button>Login</button>
+          <Link to="/login" className='img-container'>
+            <div className="login-text">Login</div>
+            <img className='login-img' src={loginImage} alt="Login" />
           </Link>
         ) : (
           <div className="dropdown">
@@ -37,13 +37,11 @@ function BasePage(props) {
           </div>
         )}
       </div>
-      <ScrollingBackground>
-        <div style={{ paddingTop: '60px' }}>
-          {props.children}
-        </div>
-      </ScrollingBackground>
+      <div  className='base-wrapper'>
+        {props.children}
+      </div>
     </div>
   );
-}
+}  
 
 export default BasePage;

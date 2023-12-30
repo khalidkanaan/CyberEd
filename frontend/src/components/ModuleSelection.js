@@ -1,18 +1,18 @@
 import React from 'react';
-import '../assets/css/homepage.css'
-import '../assets/css/fonts.css';
+import { Link } from 'react-router-dom';
+import '../assets/css/homepage.css';
 
 const modules = [
-  { id: 'c1', title: 'MODULE 1', description: 'MODULE 1 description', bgImage: require('../assets/img/bg1.jpg'), defaultChecked: true },
-  { id: 'c2', title: 'MODULE 2', description: 'MODULE 2 description', bgImage: require('../assets/img/bg1.jpg') },
-  { id: 'c3', title: 'MODULE 3', description: 'MODULE 3 description', bgImage: require('../assets/img/bg1.jpg') },
-  { id: 'c4', title: 'MODULE 4', description: 'MODULE 4 description', bgImage: require('../assets/img/bg1.jpg') },
+  { id: 'c1', title: 'MODULE 1', description: 'MODULE 1 description', bgImage: require('../assets/img/bg1.jpg'), defaultChecked: true, link: '/module1' },
+  { id: 'c2', title: 'MODULE 2', description: 'MODULE 2 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module2' },
+  { id: 'c3', title: 'MODULE 3', description: 'MODULE 3 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module3' },
+  { id: 'c4', title: 'MODULE 4', description: 'MODULE 4 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module4' },
 ];
 
 function ModuleSelection() {
   return (
-    <div className="wrapper">
-      <h1 className="ps2p text-L2">Welcome to the Home Page!</h1>
+    <div>
+      <h1 className="app-title">Welcome to CyberCity</h1>
       <div className="container">
         {modules.map((module, index) => (
           <React.Fragment key={module.id}>
@@ -21,7 +21,12 @@ function ModuleSelection() {
               <div className="row">
                 <div className="icon">{index + 1}</div>
                 <div className="description">
-                  <h4>{module.title}</h4>
+                  <div className="module-title">
+                    <h4>{module.title}</h4>
+                    <Link to={module.link}>
+                      <button>Start</button>
+                    </Link>
+                  </div>
                   <p>{module.description}</p>
                 </div>
               </div>

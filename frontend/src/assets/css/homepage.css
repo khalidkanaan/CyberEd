@@ -122,3 +122,11 @@
     width: 600px;
 }
 
+.click-gif {
+    position: fixed;
+    width: 150px;
+    top: 35px;
+    right: 100px;
+    pointer-events: none;
+    z-index: 2;
+}

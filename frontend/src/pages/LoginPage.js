@@ -63,27 +63,27 @@ function LoginPage() {
 
   return (
     <BasePage>
-        <div className="lr-container">
-          <form className="lr-form" onSubmit={handleSubmit}>
-            <img className="logo-class" src={logo} alt="CyberEd.png"/>
+      <div className="lr-container">
+        <form className="lr-form" onSubmit={handleSubmit}>
+          <img className="logo-class" src={logo} alt="CyberEd.png"/>
 
-              <div className="input-container">
-                <label>EMAIL</label>
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-              </div>
-              <div className="input-container">
-                <label>PASSWORD</label>
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-              </div>
-            <button type="submit">LOGIN</button>
-            <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
-              {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
+            <div className="input-container">
+              <label>EMAIL</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
-            <Link to="/register">
-              No account? Sign up here
-            </Link>
-          </form>
-        </div>
+            <div className="input-container">
+              <label>PASSWORD</label>
+              <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+            </div>
+          <button type="submit">LOGIN</button>
+          <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
+            {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
+          </div>
+          <Link to="/register">
+            No account? Sign up here
+          </Link>
+        </form>
+      </div>
     </BasePage>
   );
 }

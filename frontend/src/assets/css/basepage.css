@@ -4,6 +4,14 @@
   100% { background-position: 0 0; }
 }
 
+@font-face {
+  font-family: 'Press Start 2P Regular';
+  src: url('../../../public/PressStart2P-Regular.ttf') format('truetype');
+  /* Add additional formats if available */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-image: url('../img/bg2-new.png');
   background-size: cover;
@@ -115,7 +123,7 @@ code {
 
 .login-text {
   font-size: 100%;
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Press Start 2P Regular', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   position: relative;

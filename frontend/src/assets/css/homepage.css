@@ -1,0 +1,124 @@
+/*
+  Homepage Fonts
+  ============================================================================= */
+@font-face {
+    font-family: 'Press Start 2P Regular';
+    src: url('../../../public/PressStart2P-Regular.ttf') format('truetype');
+    /* Add additional formats if available */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Apply the font to specific elements or globally */
+
+.app-title {
+  font-family: 'Press Start 2P Regular', sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-text-stroke: 1px black;
+  padding: 0.5em;
+  border-radius: 30px;
+  font-size: 60px;
+}
+
+/*
+  Module Selection
+  ============================================================================= */
+  .container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }  
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); /* make card move */
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    height: 15em;
+    width: 28em;
+}
+
+.description .module-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.description button {
+    background-color: rgba(98, 0, 128, 0.85);
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P Regular', sans-serif;;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: black;
+    -webkit-text-stroke: 0.50px black;
+    padding: 0.4em;
+    cursor: pointer;
+    margin-left: 7%;
+}
+
+.description p {
+    color: whitesmoke;
+    border-color: black;
+    -webkit-text-stroke: 0.50px black;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: 'Press Start 2P Regular', sans-serif;;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.module-input {
+    display: none;
+}
+
+.module-input:checked + label {
+    width: 600px;
+}
+

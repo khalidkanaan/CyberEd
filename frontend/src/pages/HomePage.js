@@ -1,11 +1,13 @@
 import React from 'react';
 import BasePage from './BasePage';
+import ModuleSelection from '../components/ModuleSelection'; 
+
 
 class HomePage extends React.Component {
   render() {
     return (
       <BasePage>
-        <h1>Welcome to the Home Page!</h1>
+        <ModuleSelection />
       </BasePage>
     );
   }

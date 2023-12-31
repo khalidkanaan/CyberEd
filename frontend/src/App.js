@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import './assets/css/basepage.css';
-import Module1 from './pages/modules/module1';
+import ModuleExample from './pages/modules/ModuleExample';
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
-            <Route path="module1" element={<ProtectedRoute><Module1 /></ProtectedRoute>} />
+            <Route path="module/example" element={<ProtectedRoute><ModuleExample /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

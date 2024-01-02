@@ -1,5 +1,5 @@
 import React from 'react';
-import DialogueBox from '../../../../components/DialogueBox';
+import DialogueBox from '../../../components/DialogueBox';
 
 function Slide1() {
   const dialogues = [

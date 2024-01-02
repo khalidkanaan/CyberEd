@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import './assets/css/basepage.css';
-import ModuleExample from './pages/modules/ModuleExample/ModuleExample';
+import ModuleExample from './modules/example/ModuleExample';
 
 export default function App() {
   return (

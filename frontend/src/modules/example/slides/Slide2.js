@@ -1,6 +1,6 @@
 import React from 'react';
-import { toggleElements } from '../../../../assets/js/helpers';
-import DialogueBox from '../../../../components/DialogueBox';
+import { toggleElements } from '../../../assets/js/helpers';
+import DialogueBox from '../../../components/DialogueBox';
 
 function Slide2() {
 

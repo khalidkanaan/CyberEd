@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Module from '../../../components/Module'
+import Module from '../../pages/ModulePage'
 import Slide1 from './slides/Slide1';
 import Slide2 from './slides/Slide2';
 import Slide3 from './slides/Slide3';

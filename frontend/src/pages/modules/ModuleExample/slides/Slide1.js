@@ -1,8 +1,12 @@
 import React from 'react';
-import DialogueBox from './DialogueBox';
+import DialogueBox from '../../../../components/DialogueBox';
 
 function Slide1() {
-  const dialogues = ['Slide 1 Dialogue 1', 'Slide 1 Dialogue 2'];
+  const dialogues = [
+    { text: 'Slide 1 Dialogue 1' },
+    { text: 'Slide 1 Dialogue 2' },
+    { text: 'Slide 1 Dialogue 3' },
+  ];
 
   return (
     <div>

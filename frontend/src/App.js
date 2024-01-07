@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import './assets/css/basepage.css';
 import ModuleExample from './modules/example/ModuleExample';
+import CyberThreats from "./modules/threats/CyberThreats";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="module/example" element={<ProtectedRoute><ModuleExample /></ProtectedRoute>} />
+            <Route path="module/cyberthreats" element={<ProtectedRoute><CyberThreats /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

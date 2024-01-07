@@ -64,15 +64,13 @@ const DialogueBox = ({ dialogues }) => {
       setCurrentDialogueIndex(currentDialogueIndex + 1);
     } else {
       setIsClosing(true); // start the closing animation
-      // timer to hide after closing animation is done.
+      // timer to hide the dialogueBox after closing animation is done.
       setTimeout(() => setIsHidden(true), animationDuration);
       // Handles our okActions
-      console.log(dialogues[currentDialogueIndex].okActions);
       if (dialogues[currentDialogueIndex].okActions) {
         if (Array.isArray(dialogues[currentDialogueIndex].okActions)) {
           // Execute each okAction in order
           for (const okAction of dialogues[currentDialogueIndex].okActions) {
-            console.log(okAction);
             await okAction();
           }
         } else {

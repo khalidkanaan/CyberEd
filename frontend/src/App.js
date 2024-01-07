@@ -1,11 +1,10 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './assets/css/basepage.css';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
-import './assets/css/basepage.css';
-import ModuleExample from './modules/example/ModuleExample';
 import CyberThreats from "./modules/threats/CyberThreats";
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
-            <Route path="module/example" element={<ProtectedRoute><ModuleExample /></ProtectedRoute>} />
             <Route path="module/cyberthreats" element={<ProtectedRoute><CyberThreats /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>

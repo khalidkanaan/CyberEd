@@ -9,12 +9,15 @@ const DialogueBox = ({ dialogues }) => {
   const [isTyping, setIsTyping] = useState(true);
   const [isAnimating, setIsAnimating] = useState(true);
   const [lastToggledElements, setLastToggledElements] = useState(null); // track last toggled DOM elements for back button
+  const [isClosing, setIsClosing] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const animationDuration = 500; // this delay value should match the duration of the opening animation we define in dialogue.css
   const timerId = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAnimating(false);
-    }, 500); // delay should match the duration of the opening animation we define in dialogue.css
+    }, animationDuration); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -52,7 +55,7 @@ const DialogueBox = ({ dialogues }) => {
     return () => clearInterval(timerId.current);
   }, [currentDialogueIndex, dialogues, isAnimating]);
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (isTyping) {
       clearInterval(timerId.current);
       setCurrentDialogue(dialogues[currentDialogueIndex].text);
@@ -60,7 +63,24 @@ const DialogueBox = ({ dialogues }) => {
     } else if (currentDialogueIndex < dialogues.length - 1) {
       setCurrentDialogueIndex(currentDialogueIndex + 1);
     } else {
-      setIsDialogueOpen(false);
+      setIsClosing(true); // start the closing animation
+      // timer to hide the dialogueBox after closing animation is done.
+      setTimeout(() => setIsHidden(true), animationDuration);
+      // Handles our okActions
+      if (dialogues[currentDialogueIndex].okActions) {
+        if (Array.isArray(dialogues[currentDialogueIndex].okActions)) {
+          // Execute each okAction in order
+          for (const okAction of dialogues[currentDialogueIndex].okActions) {
+            await okAction();
+          }
+        } else {
+          // Execute the single okAction
+          await dialogues[currentDialogueIndex].okActions();
+        }
+      }
+      setTimeout(() => {
+        setIsDialogueOpen(false); // remove the dialogue box after the animation
+      }, animationDuration); // This should be equal to the duration of your closing animation
     }
   };
 
@@ -81,9 +101,9 @@ const DialogueBox = ({ dialogues }) => {
   }
 
   return (
-    <div className="dialogue-box">
+    <div className={`dialogue-box ${isClosing ? 'closing' : ''} ${isHidden ? 'hidden' : ''}`}>
       {!isAnimating && (
-        <>
+        <div className={`${isClosing ? 'hidden' : ''}`}>
           <p>{currentDialogue}</p>
           <button onClick={handleBack} disabled={currentDialogueIndex === 0}>
             Back
@@ -91,7 +111,7 @@ const DialogueBox = ({ dialogues }) => {
           <button onClick={handleNext} disabled={currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen}>
             {currentDialogueIndex === dialogues.length - 1 ? 'OK' : isTyping ? 'Skip' : 'Next'}
           </button>
-        </>
+        </div>
       )}
     </div>
   );

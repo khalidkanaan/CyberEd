@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Cookies from 'js-cookie';
 import { createBrowserHistory } from 'history';
 
@@ -36,27 +38,64 @@ function animateElement(element, startOpacity, endOpacity, display, duration) {
   }
 }
 
-export function toggleElements(ids, shouldShow = true) {
+var timeouts = [];
+
+export function toggleElements(ids, shouldShow = true, reverseAnimation = false) {
   var delay = 0; // Initial delay
-  var animationDuration = 500;
+  var animationDuration = 500; // Initial animation duration
+  var speedUpFactor = 0.9; // Decrease the duration by 10% each time
 
-  // Reverse the array if shouldShow is false
-  var elementsToToggle = shouldShow ? ids : [...ids].reverse();
+  // Clear any pending timeouts
+  timeouts.forEach(clearTimeout);
+  timeouts = [];
 
-  elementsToToggle.forEach(function(id) {
-    setTimeout(function() {
-      var element = document.getElementById(id);
-      if (element) {
-        element.style.transition = `opacity ${animationDuration / 1000}s ease-in`;
+  // Reverse the array if reverseAnimation is true
+  var elementsToToggle = shouldShow || !reverseAnimation ? ids : [...ids].reverse();
 
-        if (shouldShow) {
-          animateElement(element, 0, 1, '', animationDuration);
-        } else {
-          animateElement(element, 1, 0, '', animationDuration);
+  // Return a promise that resolves after all animations have completed
+  return new Promise((resolve) => {
+    elementsToToggle.forEach(function(id, index) {
+      var timeout = setTimeout(function() {
+        var element = document.getElementById(id);
+        if (element) {
+          element.style.transition = `opacity ${animationDuration / 1000}s ease-in`;
+
+          if (shouldShow) {
+            element.style.display = '';
+            animateElement(element, 0, 1, '', animationDuration);
+          } else {
+            if (reverseAnimation) {
+              animateElement(element, 1, 0, '', animationDuration);
+              setTimeout(() => { element.style.display = 'none'; }, animationDuration);
+            } else {
+              element.style.display = 'none';
+            }
+          }
+
+          // If this is the last animation, resolve the promise
+          if (index === elementsToToggle.length - 1) {
+            setTimeout(resolve, animationDuration);
+          }
         }
-      }
-    }, delay);
+      }, delay);
 
-    delay += animationDuration; // Increase delay for next element
+      timeouts.push(timeout);
+
+      if (shouldShow || reverseAnimation) {
+        delay += animationDuration; // Increase delay for next element
+        animationDuration *= speedUpFactor; // Decrease the duration for next element
+      }
+    });
   });
 }
+
+
+export const navigateSlide = (slide) => {
+  const slideContainer = document.querySelector('#slide');
+
+  // Check if the div exists
+  if (slideContainer) {
+      // Render the passed React component inside the div
+      ReactDOM.render(React.createElement(slide), slideContainer);
+  }
+};

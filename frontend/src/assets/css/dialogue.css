@@ -15,7 +15,17 @@
     }
 }
 
+@keyframes shrink {
+    0% {
+        width: 55%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
 .dialogue-box {
+    overflow: hidden;
     position: absolute;
     height: 30%;
     background-color: rgba(47, 54, 48, 0.4);
@@ -33,6 +43,15 @@
     transform: translateX(-50%);
 
     animation: expand 0.5s ease-out forwards;
+    z-index: 100;
+}
+
+.dialogue-box.closing {
+    animation: shrink 0.5s ease-in forwards;
+}
+
+.hidden {
+    display: none;
 }
 
 .dialogue-box button {

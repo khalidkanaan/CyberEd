@@ -49,3 +49,183 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* Slide1 */
+.file-space {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+}
+
+.file-img {
+    width: 20%;
+}
+
+.file-name {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.position-img-right {
+    position: absolute;
+    width: 15%;
+    top: 25%;
+    right: 3%;
+}
+
+.golden-button {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    background-color: gold;
+    border: 1px groove;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 grey,  
+        1px -1px 0 grey,
+        -1px 1px 0 grey,
+        1px 1px 0 grey;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ffcc00, 0 0 40px #ffcc00, 0 0 80px #ffcc00;
+    transition: 1s;
+  }
+  
+.golden-button:hover {
+    box-shadow: 0 0 20px #ffaa00, 0 0 30px #ffaa00, 0 0 40px #ffaa00;
+    transition: 0.5s;
+}
+
+@keyframes moveCoin {
+    0% { top: 45%; left: 18%; }
+    50% { top: 5%; right: 40%; }
+    100% { top: 20%; left: 80%; }
+  }
+
+.coin {
+    width: 5%;
+    z-index: 100;
+    position: absolute;
+    animation: moveCoin 0.5s linear;
+}
+
+.treasure-chest {
+    width: 12%;
+    position: absolute;
+    left: 9%;
+    top: 43%;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700; }
+    50% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; }
+    100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700; }
+}
+  
+.coin-counter {
+    position: absolute;
+    right: 7%;
+    top: 15%;
+    color: #FFD700; /* Gold color */
+    font-size: 25px;
+    font-weight: bold;
+    animation: glow 1.2s ease-in-out infinite; /* Apply the glow animation */
+    -webkit-text-stroke: 0.5px black; /* Add a black border */
+}
+
+
+.file-open-div {
+    position: absolute;
+    top: 25%;
+    right: 31%;
+    width: 10%;
+    height: 25%;
+    z-index: 2;
+}
+
+.file-open-div:hover {
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.file-open-img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.google-drive {
+    position: absolute;
+    left: 22.5%;
+    top: 5%;
+    border: 2px black solid;
+    border-radius: 10px;
+    width: 20%;
+}
+
+
+/* Nuclear Button */
+.final-option-button {
+    position: absolute;
+    top: 20%;
+    cursor: pointer;
+    width: 15%;
+    filter: brightness(65%);
+    transition: filter 0.3s ease;
+}
+
+.final-option-button:hover {
+    filter: brightness(100%);
+}
+
+/* Nuclear Button */
+.antivirus-button {
+    left: 23%;
+}
+
+/* Antivirus Button */
+.nuclear-button {
+    width: 17%;
+    right: 26%;
+}
+
+.exorcise-sword {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 20%;
+    z-index: -1;
+}
+
+@keyframes diagonal-move {
+    0% { transform: translate3d(0px, 0px, 0); }
+    20% { transform: translate3d(40%, 40%, 0); }
+    100% { transform: translate3d(190%, 160%, 0); }
+}
+
+.move-diagonal {
+    animation: diagonal-move 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.exorcise-fire {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+    width: 100%;
+}
+
+.sword-in-heart {
+    top: 30%;
+
+}

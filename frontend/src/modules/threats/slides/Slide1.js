@@ -1,14 +1,14 @@
 import React from 'react';
 import '../assets/css/styling.css'
 import DialogueBox from '../../../components/DialogueBox';
-import { intro } from '../assets/dialogues'
-import robot from '../assets/img/robot-helper.gif'
-import kaspersky from '../assets/img/antivirus/kaspersky.gif'
-import shield from '../assets/img/antivirus/shield.gif'
-import virus from '../assets/img/malware/virus.png'
-import ransomware from '../assets/img/malware/ransomware.png'
-import trojan from '../assets/img/malware/trojan.png'
-import worm from '../assets/img/malware/worm.png'
+import { intro } from '../assets/dialogues';
+import robot from '../assets/img/robot-helper.gif';
+import kaspersky from '../assets/img/antivirus/kaspersky.gif';
+import shield from '../assets/img/antivirus/shield.gif';
+import virus from '../assets/img/malware/virus/virus.gif';
+import ransomware from '../assets/img/malware/ransomware/randy.gif';
+import trojan from '../assets/img/malware/trojan/trojan.gif';
+import worm from '../assets/img/malware/worm/worm.gif';
 
 function Slide1() {
 

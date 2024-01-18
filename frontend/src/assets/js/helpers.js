@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Cookies from 'js-cookie';
 import { createBrowserHistory } from 'history';
+import DialogueBox from '../../components/DialogueBox';
 
 const history = createBrowserHistory(); 
 
@@ -92,10 +93,19 @@ export function toggleElements(ids, shouldShow = true, reverseAnimation = false)
 
 export const navigateSlide = (slide) => {
   const slideContainer = document.querySelector('#slide');
-
-  // Check if the div exists
   if (slideContainer) {
-      // Render the passed React component inside the div
-      ReactDOM.render(React.createElement(slide), slideContainer);
+    const root = createRoot(slideContainer); // Create a root
+    root.render(React.createElement(slide)); // Render the passed React component inside the div
+  } else {
+    console.log("Can't use navigateSlide, please add a <div> with id=\"slide\" in your main Module page")
   }
+};
+
+export const createDialogueBox = (dialogues) => {
+  const slideDiv = document.querySelector('#slide > div:first-child'); // Find the first child div inside the div with id 'slide'
+  const dialogueDiv = document.createElement('div'); // Create a new div for the DialogueBox
+  slideDiv.appendChild(dialogueDiv); // Append the dialogueDiv to the slideDiv
+  const root = createRoot(dialogueDiv);
+  const dialogueBox = <DialogueBox dialogues={dialogues} />;
+  root.render(dialogueBox);
 };

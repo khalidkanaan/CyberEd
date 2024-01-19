@@ -1,0 +1,156 @@
+/* Base image container class */
+.Email .image-container {
+    /* positioning of div */
+    position: absolute;
+    top: 40%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+
+    /* size of div */
+    min-height: 60%;
+    max-height: 64%; /* min-height + 2*padding-top + 2*padding-bottom */
+    max-width: 30%;
+    min-width: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    overflow: hidden;
+
+    /* border */
+    border: 5px solid;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.Email .bg1{
+    position: absolute;
+    right: 15%;
+    width: 70%;
+    border-radius: 15px;
+    margin-top: 1%;
+    z-index: 0;
+}
+
+.Email .bg2{
+    position: absolute;
+    width: 85%;
+    right: 7.5%;
+    border-radius: 15px;
+    margin-top: 1%;
+    z-index: 0;
+}
+
+.Email .bg3{
+    position: absolute;
+    right: 12.5%;
+    width: 75%;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.Email .sorting-image-container {
+    border-color: black;
+    background-color: rgb(0, 0, 0, 0.3);
+    top: 25%;
+    min-height: 30%; /* This will override the min-height from .image-container */
+    max-height: 44%; /* This will override the max-height from .image-container */
+}
+
+
+.Email .image {
+    width: auto;
+    max-width: 40%;
+    border-radius: 5px;
+}
+
+.Email .mailman {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+
+.Email .mailmanalt {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    filter: brightness(125%);
+    z-index: 1;
+}
+
+.Email .mailmanalt2 {
+    position: absolute;
+    top: 60%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    filter: brightness(90%);
+    z-index: 1;
+}
+
+.Email .mailmanalt3 {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    filter: brightness(90%);
+    z-index: 1;
+}
+
+.Email .face {
+    position: absolute;
+    top: 80%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    z-index: 100000;
+}
+
+.Email .door {
+    position: absolute;
+    right: 60%;
+    top: 25%;
+    transition: background-color 0.3s ease; 
+}
+
+.Email .door:hover {
+    filter: brightness(75%); 
+}
+
+.Email #key-move-div{
+    position: absolute;
+    top: 45%;
+    left: 42%;
+}
+
+.Email .key {
+    width: 230px;
+    /* Apply a filter to create the glow effect */
+    filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+    /* Animation */
+    animation: glow 2s infinite;
+    cursor: pointer;
+}
+
+.Email .key:hover {
+    width: 250px;
+    left: 45.5%;
+}
+
+/* Define the keyframes for the glowing effect */
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px gold);
+    }
+    100% {
+        filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+    }
+}
+
+

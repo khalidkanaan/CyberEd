@@ -41,9 +41,9 @@ function animateElement(element, startOpacity, endOpacity, display, duration) {
 
 var timeouts = [];
 
-export function toggleElements(ids, shouldShow = true, reverseAnimation = false) {
+export function toggleElements(ids, shouldShow = true, reverseAnimation = false, duration = 500) {
   var delay = 0; // Initial delay
-  var animationDuration = 500; // Initial animation duration
+  var animationDuration = duration; // Initial animation duration
   var speedUpFactor = 0.9; // Decrease the duration by 10% each time
 
   // Clear any pending timeouts
@@ -89,6 +89,7 @@ export function toggleElements(ids, shouldShow = true, reverseAnimation = false)
     });
   });
 }
+
 
 
 export const navigateSlide = (slide) => {

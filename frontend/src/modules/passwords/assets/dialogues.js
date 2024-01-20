@@ -88,8 +88,7 @@ export const dialogues3 = [
 export const dialogues4 = [
   { 
     text: 'Let\'s start our adventure to create a strong password. See this weak password? The naughty Haunter likes these because they are easy to guess! Let\'s make it stronger to keep Haunter away.',
-    action: () => toggleElements(['updateButton'], false).then(() => toggleElements(['robot','lock'])),
-    
+    action: () => toggleElements(['updateButton'], false).then(() => toggleElements(['robot','lock', 'haunter'])),    
   },
   { 
     text: 'This password is too easy for Haunter! Let\'s make it better by adding some uppercase letters. Hit the button to see the change. Adding uppercase letters is like using magical shields that protect your password!',
@@ -97,11 +96,11 @@ export const dialogues4 = [
   },
   { 
     text: 'Great job! Uppercase letters have made your password tougher. But Haunter is still trying! Let\'s confuse him by adding some symbols. Hit the button to see the change.',
-    action: () => toggleElements(['robot']),
+    action: () => toggleElements(['robot', 'updateButton']),
   },
   { 
     text: 'Awesome! Symbols are like secret codes that add extra protection. But we\'re not done yet! Let\'s make the password longer. A strong password is usually 12 characters long, but going for 14 or more is like building a big wall!',
-    action: () => toggleElements(['robot']),
+    action: () => toggleElements(['robot', 'updateButton']),
   },
   { 
     text: 'Fantastic! A longer password is like a maze that Haunter can\'t find his way through. You\'ve just made a strong password that Haunter can\'t guess! Remember, using different passwords for each of your accounts is like having a different key for every door.',

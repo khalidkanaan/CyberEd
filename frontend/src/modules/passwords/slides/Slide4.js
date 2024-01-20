@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { navigateSlide } from '../../../assets/js/helpers';
+import React, { useState, useEffect } from 'react';
+import { navigateSlide, toggleElements } from '../../../assets/js/helpers';
 import '../assets/css/Passwords.styling.css'
 import DialogueBox from '../../../components/DialogueBox';
 import { dialogues4 } from '../assets/dialogues'
@@ -16,19 +16,14 @@ function Slide4() {
   const [isButtonClickable, setIsButtonClickable] = useState(true); 
 
   const updatePassword = () => {
-    if (index >= passwords.length - 1) return; // if button is not clickable or last password reached, do nothing
-
-    // Update the index, which will update the password, strength, and color
-    if(isButtonClickable){
+    if (index >= passwords.length - 1){
+      return;
+    }else{
       setIndex(index + 1);
       setIsButtonClickable(false);
-    }else{
-      setIsButtonClickable(true);
+      toggleElements(['updateButton'], false, true).then(() => setIsButtonClickable(true));
     }
- 
-
-
-  } 
+  }
 
   return (
     <div className='password'>
@@ -49,7 +44,7 @@ function Slide4() {
         <div className='strength-bar' style={{width: `${strengths[index]}%`, backgroundColor: colors[index]}}></div>
       </div> 
 
-      <button id='updateButton' className='update-button' onClick={updatePassword} style={{display: "none"}}>Update Password</button>
+      <button id='updateButton' className='update-button' onClick={updatePassword} disabled={!isButtonClickable} style={{display: "none"}}>Update Password</button>
       
     </div>
   );

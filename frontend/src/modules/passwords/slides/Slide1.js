@@ -5,15 +5,11 @@ import { intro } from '../assets/dialogues'
 import coolRobot from '../assets/img/coolRobot.gif'
 import villain from '../assets/img/villain.gif'
 import password from '../assets/img/password.gif'
-import pwdmanager1 from '../assets/img/pwdmanager1.gif'
-import pwdmanager2 from '../assets/img/pwdmanager2.gif'
-
-
 
 
 function Slide1() {
   return (
-    <div className= 'passwords'>
+    <div className= 'password'>
       <h1>Slide 1</h1>
       <DialogueBox dialogues={intro}/>
       <img id='robot' src={coolRobot} className='robot image' alt="friendly website robot" style={{display: "none"}} />

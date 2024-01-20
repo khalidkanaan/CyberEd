@@ -11,6 +11,7 @@ const DialogueBox = ({ dialogues }) => {
   const [lastToggledElements, setLastToggledElements] = useState(null); // track last toggled DOM elements for back button
   const [isClosing, setIsClosing] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isActionExecuting, setIsActionExecuting] = useState(false);
   const animationDuration = 500; // this delay value should match the duration of the opening animation we define in dialogue.css
   const timerId = useRef(null);
 
@@ -39,7 +40,10 @@ const DialogueBox = ({ dialogues }) => {
 
       // check if there is a function to execute
       if (dialogues[currentDialogueIndex].action) {
-        dialogues[currentDialogueIndex].action();
+        setIsActionExecuting(true);
+        dialogues[currentDialogueIndex].action().finally(() => {
+          setIsActionExecuting(false);
+        });
 
         const actionStr = dialogues[currentDialogueIndex].action.toString();
 
@@ -108,7 +112,7 @@ const DialogueBox = ({ dialogues }) => {
           <button onClick={handleBack} disabled={currentDialogueIndex === 0}>
             Back
           </button>
-          <button onClick={handleNext} disabled={currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen}>
+          <button onClick={handleNext} disabled={isActionExecuting || (currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen)}>
             {currentDialogueIndex === dialogues.length - 1 ? 'OK' : isTyping ? 'Skip' : 'Next'}
           </button>
         </div>

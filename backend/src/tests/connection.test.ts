@@ -3,9 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const DB_URI = process.env.DB_URI || 'mongodb://localhost:27017';
+
 describe('Database Connection', () => {
   beforeAll(async () => {
-    await mongoose.connect(`${process.env.DB_URI}`);
+    await mongoose.connect(DB_URI);
   });
 
   it('should be able to connect to the database', async () => {

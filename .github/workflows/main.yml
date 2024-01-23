@@ -27,9 +27,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm install express jest mongodb
-    - name: Run Jest
-      run: npm test
+    - name: Install dependencies and run tests in backend
+      run: |
+        npm ci
+        npm install express jest mongodb
+        npm test
       env:
         MONGODB_URI: mongodb://localhost:27017
+      working-directory: backend

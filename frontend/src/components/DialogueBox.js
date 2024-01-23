@@ -95,7 +95,7 @@ const DialogueBox = ({ dialogues }) => {
 
       // clicking the back button in the dialogue box hides the elements
       if (lastToggledElements) {
-        toggleElements(lastToggledElements, false);
+        toggleElements(lastToggledElements, false, false, 100);
       }
     }
   };
@@ -112,7 +112,7 @@ const DialogueBox = ({ dialogues }) => {
           <button onClick={handleBack} disabled={currentDialogueIndex === 0}>
             Back
           </button>
-          <button onClick={handleNext} disabled={isActionExecuting || (currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen)}>
+          <button onClick={handleNext} disabled={isActionExecuting || (currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen)}> 
             {currentDialogueIndex === dialogues.length - 1 ? 'OK' : isTyping ? 'Skip' : 'Next'}
           </button>
         </div>

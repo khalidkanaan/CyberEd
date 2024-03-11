@@ -2,6 +2,7 @@ import { toggleElements, navigateSlide } from '../../../assets/js/helpers';
 import Slide3 from '../slides/Slide3'
 import Slide2 from '../slides/Slide2'
 import Slide4 from '../slides/Slide4'
+import Slide5 from '../slides/Slide5';
 
 const robotId = ['robot'];
 const malwaresIds = ['malware-img-div', 'virus', 'ransomware', 'trojan', 'worm', 'antivirus-img-div', 'kaspersky', 'shield'];
@@ -105,7 +106,39 @@ export const dialogues4 = [
   { 
     text: 'Fantastic! A longer password is like a maze that Haunter can\'t find his way through. You\'ve just made a strong password that Haunter can\'t guess! Remember, using different passwords for each of your accounts is like having a different key for every door.',
     okActions: [
-      () => console.log('Wesh Khoya labass?')
+      () => navigateSlide(Slide5)
+    ],
+  },
+];
+
+export const dialogues5 = [
+  {
+    text: 'Now that you have a better idea of strong passwords, let\'s create your very own strong password! A strong password depends on the password policy, so let\'s decide on our own password policy',
+    action: () => toggleElements(['form', 'robot', 'bar'], false).then(() => toggleElements(['robot2'])),
+  },
+  {
+    text: '**Select Password Policy Options**: Input the minimum password length and check the boxes for your password policy. Once done, input a password into the text area to see how strong your password is!',
+    action: () => toggleElements(['robot2'], false).then(() => toggleElements(['robot', 'form', 'bar'])),
+  },
+  {
+    text: '   - **Uppercase Letters**: Add some uppercase letters to your password. Think of them as magical shields that protect your password!',
+  },
+  {
+    text: '   - **Symbols**: Include special symbols (like @, #, or $) to confuse any lurking Haunters. Symbols act like secret codes!',
+  },
+  {
+    text: '   - **Length**: Aim for at least 12 characters. Going for 14 or more is like building a big wall that Haunter can\'t climb!',
+  },
+  {
+    text: '2. **Input Your Password**: Type in your chosen password. Make sure it meets the policy options you selected.',
+  },
+  {
+    text: '3. **Strength Indicator**: Below the input field, you\'ll see a strength bar. It will show you how strong or weak your password is based on the policy options you chose.',
+  },
+  {
+    text: 'Remember, a strong password is like a maze that Haunter can\'t navigate. And just like having different keys for different doors, use unique passwords for each of your accounts!',
+    okActions: [
+      () => console.log('Wesh Khoya labass?'), // Optional action (you can customize this part)
     ],
   },
 ];

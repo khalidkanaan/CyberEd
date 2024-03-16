@@ -57,3 +57,16 @@
 .image-make-tiny {
     transform: scale(0.2) translate(20%, 185%);
 }
+
+/* iphone positioning */
+.move-to-bottom-left {
+    position: absolute;
+    bottom: 20%;
+    left: 4%;
+}
+
+.move-to-bottom-right {
+    position: absolute;
+    bottom: 20%;
+    right: 4%;
+}

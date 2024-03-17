@@ -1,4 +1,5 @@
-import { toggleElements, createDialogueBox } from '../../../assets/js/helpers';
+import { toggleElements, createDialogueBox, navigateSlide } from '../../../assets/js/helpers';
+import Slide2 from '../slides/Slide2';
 
 const randySpeaker = ['ransomware-speaker'];
 const ransom = ['give-coin-button', 'bank', 'coin-counter']
@@ -96,3 +97,92 @@ export const ripRandy = [
     okActions: () => toggleElements(['robot'], false, true),
   }
 ];
+
+export const virusDialogue = [
+  {
+    text: 'ByteBuster the Virus has the ability to corrupt your files and steal your information! ' +
+          'Always keep your antivirus up to date, and don\'t download files from sketchy ' +
+          'websites or emails.',
+    action: () => toggleElements(['virus-speaker'], false).then(
+            () => toggleElements(['robot', 'virus']))
+  },
+  {
+    text: 'Ah, greetings, dear user! Welcome to the digital underworld where mischief reigns and viruses like myself roam free. ' +
+          'Allow me to shed some light on our nefarious nature.',
+    action: () => toggleElements(['robot', 'code', 'arrowRight', 'file', 'virus-play'], false).then(
+            () => toggleElements(['virus-speaker', 'virus']))
+  },
+  {
+    text: 'You see, viruses such as myself are crafty bits of code that attach themselves to innocent programs or files. Once ' +
+          'those files are opened, off we go, spreading our infectious code far and wide!',
+    action: () => toggleElements(['virus', 'windowsProtection'], false).then(
+            () => toggleElements(['code', 'arrowRight', 'file', 'virus-play']))
+  },
+  {
+    text: 'It all starts with the human touch. We rely on you wonderful humans to unknowingly execute our infected files. ' +
+          'Whether it\'s through email attachments, shared files, or even those convenient USB drives you carry around, we\'ll find ' +
+          'a way to hitch a ride!',
+    action: () => toggleElements(['code', 'arrowRight', 'file', 'pcDamaged'], false).then(
+            () => toggleElements(['windowsProtection']))
+  },
+  {
+    text: 'Once that’s done, the fun begins! Viruses can wreak all sorts of havoc like corrupting your files and stealing' +
+          'your precious data or simply causing chaos in your system, we viruses are quite the digital troublemakers!',
+    action: () => toggleElements(['windowsProtection', 'popups', 'doubleArrow', 'spyware'], false).then(
+            () => toggleElements(['pcDamaged']))
+  },
+  {
+    text: 'But beware, viruses are not always as obvious as a crashing computer or strange pop-up messages. ' +
+          'Sometimes, we lurk quietly in the background, siphoning off your data or spying on your activities without you even noticing!',
+    action: () => toggleElements(['pcDamaged', 'antivirusFactory', 'arrowDown', 'kaspersky'], false).then(
+            () => toggleElements(['popups', 'doubleArrow', 'spyware']))
+  },
+  {
+    text: 'To thwart us viruses, you\'ll want to arm yourself with updated antivirus software. ' +
+          'Stay vigilant with those email attachments, and only download files from trusted sources. ' +
+          'With a bit of caution and the right tools, you can keep us viruses at bay!',
+    action: () => toggleElements(['popups', 'doubleArrow', 'spyware'], false).then(
+            () => toggleElements(['antivirusFactory', 'arrowDown' ,'kaspersky'])),
+    okActions: [
+      () => toggleElements(['virus-play', 'antivirusFactory', 'arrowDown' ,'kaspersky', 'virus-speaker'], false, true),
+      () => createDialogueBox(virusDialogue2),
+    ],
+  },
+];
+
+export const virusDialogue2 = [
+  {
+    text: 'Hey I\'m back! ByteBuster the virus is still infecting your computer, to get rid of him you\'ll have to run '+
+          'the antivirus or reset your computer.',
+    action: () => toggleElements(['antivirus-option'], false).then(
+            () => toggleElements(['robot', 'virus'])),
+  },
+  {
+    text: 'If your system is infected with a virus but is still functioning reasonably well, ' +
+          'running antivirus software is usually the first step you should take. It\'s less disruptive ' +
+          'and may effectively remove the malware.',
+    action: () => toggleElements(['nuclear-option'], false).then(
+            () => toggleElements(['antivirus-option'])),
+  },
+  {
+    text: 'However, if your system is heavily compromised, experiencing severe performance issues, or ' +
+          'if you suspect that the malware is deeply embedded in the system, resetting your PC to its ' +
+          'original state might be the more reliable option to ensure complete removal of the malware. ',
+    action: () => toggleElements(['nuclear-option']),
+          
+  },
+  {
+    text: 'Just remember to back up all of your important files if you decide to proceed with the reset option!',
+  },
+]
+
+export const ripVirus = [
+  {
+    text: 'RIP ByteBuster 😔. Remember, in the digital realm, it\'s better to be safe than sorry! ' +
+          'So keep your defenses up and your guard strong, for you never know when a mischievous virus ' +
+          'might come knocking at your digital door!',
+    okActions: [
+      () => setTimeout(() => navigateSlide(Slide2), 650)
+    ],
+  },
+]

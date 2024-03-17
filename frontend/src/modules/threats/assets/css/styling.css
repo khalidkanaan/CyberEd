@@ -177,3 +177,7 @@
     top: 30%;
 
 }
+
+.move-up-15-percent {
+    transform: translateY(-15%);
+}

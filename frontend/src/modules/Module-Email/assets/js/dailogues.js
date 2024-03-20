@@ -2,6 +2,7 @@ import { toggleElements, navigateSlide, setOpacity } from '../../../../assets/js
 import Slide2 from '../../slides/Slide2'
 import Slide4 from '../../slides/Slide4'
 import Slide5 from '../../slides/Slide5'
+import Slide6 from '../../slides/Slide6'
 
 export const intro = [
   {
@@ -9,41 +10,14 @@ export const intro = [
     action: () => toggleElements(['outside','face','mailman'], 1)
   },
   {
-    text: 'Here, we oversee all email traffic, ensuring every message is safely delivered and received. ',
-  },
- 
-  {
-    text: 'Let\'s dive into the essentials of email safety and understand how this hub keeps the city connected and protected.',
-    action: ()=> toggleElements(['mailmanSide','pkgs','sorting-img-div'], false).then(() =>
+    text: 'In this module, we\'re going to learn all about making sure our emails are as secure as a locked mailbox. We\'ll cover everything from creating strong passwords to spotting sneaky scams, so our email conversations stay private!',
+    action: ()=> toggleElements(['mailmanFront','pkgs'], false).then(() =>
     toggleElements(['outside','face','mailman']))
   },
-  
   {
-    text: 'In this nexus of communication, every email is crucial. ',
-    action: ()=>toggleElements(['mailmanFront'],false).then(() => 
-    toggleElements(['mailman','outside'], false).then(()=>
-    toggleElements(['pkgs'],1)).then(() => 
-    toggleElements(['mailmanSide', 'sorting-img-div']))),
-
-  },
-  {
-    text:'Just like the city relies on efficient roads and signals, Cybercity depends on us for smooth and secure email operations. ' +
-    'Your vigilance and understanding of email safety are vital. ',
-    action: ()=>toggleElements(['mailmanFront'],false).then(() => 
-    toggleElements(['pkgs'],1)).then(() => 
-    toggleElements(['mailmanSide', 'sorting-img-div'])),
-
-  },
-  
-  {
-    text: 'All right, let\'s get straight to work, partner. There\'s a lot to cover, and your role here is crucial. ' ,
-    action: () => toggleElements(['mailmanSide', 'sorting-img-div'],false,0).then(() => 
-    toggleElements(['mailmanFront'])),
-  },
-  {
-    text: 'Follow me, and I\'ll show you the ropes of managing and protecting our city\'s lifeline – email communications. ',
-    action: () => toggleElements(['mailmanSide', 'sorting-img-div'],false,0).then(() => 
-    toggleElements(['mailmanFront'])),
+    text: 'Let\'s dive into the essentials of email safety and understand how this hub keeps us connected and protected.',
+    action: () => toggleElements(['mailman', 'outside'],false).then(() => 
+    toggleElements(['pkgs','mailmanFront'])),
     okActions: [
       () => navigateSlide(Slide2)
     ],
@@ -52,7 +26,7 @@ export const intro = [
 
 export const DigitalIdentity = [
   { 
-    text: 'Welcome to the core of Email Operations Central, where securing digital identities and crafting trusted ' ,
+    text: 'Here we stand at the heart of Email Operations Central, where the security of digital identities is paramount and crafting trust is key to our mission. ' ,
     action: () => toggleElements(['mailman'],false,false,1).then(() => 
     toggleElements(['private', 'door', 'face', 'NS'],true,false,300))
   },
@@ -78,7 +52,7 @@ export const DigitalIdentity = [
     toggleElements(['mailman'],true,false,1))
   },
   { 
-    text: 'Your password is the golden key to access your information. Use the lessons from the previous module to create a steel-strong password!',
+    text: 'Your password is the golden key to access your information. Use the lessons from the previous module - "Passwords and authentication" to create a steel-strong password!',
     action: () => toggleElements(['mailman','point','key-move-div'],false,false,1).then(() => 
     toggleElements(['mailman'],true,false,1))
   },
@@ -232,6 +206,7 @@ export const Phishing = [
 
 ];
 
+//Activity Dialogues
 export const Activity = [
   {
     text: 'Now it\'s your turn to inspect some emails. Click to cycle through images of the email and use the lessons from this section to determine if an email is safe or not.\nImage 1 is the full email, Image 2 highlights the sender\'s address, and Image 3 highlights the email content.',
@@ -242,7 +217,8 @@ export const Activity = [
   }
 ];
 
-export const Ans1 = [
+
+export const Ans11 = [
   {
     text: 'Not Quite! This email has all the common signs of a phishing email. It\'s promises are too good to be true, it is riddled with grammar errors, and sent from a suspicious email address. Ignore and report as spam!',
     action: () => toggleElements(['face']),
@@ -256,8 +232,7 @@ export const Ans1 = [
     ],
   }
 ];
-
-export const Ans2 = [
+export const Ans12 = [
   {
     text: 'Correct! This email has all the common signs of a phishing email. It\'s promises are too good to be true, it is riddled with grammar errors, and sent from a suspicious email address. Ignore and report as spam!',
     action: () => toggleElements(['face']),
@@ -270,4 +245,65 @@ export const Ans2 = [
       () => toggleElements(['face'],false)
     ],
   }
+];
+
+export const Ans21 = [
+  {
+    text: 'Hmm this one is no good, it is a phishing email! Always be wary of emails rushing you to act quickly; this urgency is a common characteristic of phishing attempts. Remember, reputable companies will typically contact you about password issues only if you have initiated the request.',
+    action: () => toggleElements(['face']),
+  },
+  {
+    text: 'Let\'s try one more!',
+    action: () => toggleElements(['carousel2'],false).then(() =>
+    toggleElements(['carousel3'])),
+    okActions: [
+      () => toggleElements(['face'],false)
+    ],
+  }
+];
+export const Ans22 = [
+  {
+    text: 'That\'s right, it is a phishing email! Always be wary of emails rushing you to act quickly; this urgency is a common characteristic of phishing attempts. Remember, reputable companies will typically contact you about password issues only if you have initiated the request.',
+    action: () => toggleElements(['face']),
+  },
+  {
+    text: 'Let\'s try one more!',
+    action: () => toggleElements(['carousel2'],false).then(() =>
+    toggleElements(['carousel3'])),
+    okActions: [
+      () => toggleElements(['face'],false)
+    ],
+  }
+];
+
+export const Ans31 = [
+  {
+    text: 'Correct! This email looks safe! The email originates from a legitimate address and is free of grammatical errors. Rather than pressuring us to make a hasty decision, it politely informs us about a library card. Don\'t be afraid to ask for a second opinion if you are ever unsure of an email!',
+    action: () => toggleElements(['face']),
+    okActions: [
+      () => navigateSlide(Slide6)
+    ],
+  },
+
+];
+export const Ans32 = [
+  {
+    text: 'Not quite right, this email looks safe! The email originates from a legitimate address and is free of grammatical errors. Rather than pressuring us to make a hasty decision, it politely informs us about a library card. Don\'t be afraid to ask for a second opinion if you are ever unsure of an email!',
+    action: () => toggleElements(['face']),
+    okActions: [
+      () => navigateSlide(Slide6)
+    ],
+  },
+];
+
+export const LaFin = [
+  {
+    text: 'We’ve come to the end of this module! We hope it\'s helped you learn how to make your email communications safer. Remember, you can always come back for a quick review to keep your email safety knowledge sharp.',
+    action: () => toggleElements(['outside','face','mailmanSmile']),
+    okActions: [
+      () => {
+        window.location.href = '/';
+      } 
+    ],
+  },
 ];

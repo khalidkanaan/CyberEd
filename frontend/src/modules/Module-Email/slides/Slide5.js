@@ -1,17 +1,26 @@
 import React, {useState} from 'react';
-import { navigateSlide, createDialogueBox } from '../../../assets/js/helpers';
+import { navigateSlide, createDialogueBox, closeDialogueBox } from '../../../assets/js/helpers';
 import DialogueBox from '../../../components/DialogueBox';
-import { Activity, Ans1, Ans2 } from '../assets/js/dailogues'
+import { Activity, Ans11, Ans12, Ans21, Ans22, Ans31, Ans32 } from '../assets/js/dailogues'
 import Slide4 from './Slide4';
 import face from '../assets/img/Mailman-face.png'
+import outside from '../assets/img/outside-intro.jpg'
 
 import EM1 from '../assets/img/Emails/EM1.png'
 import EM1adr from '../assets/img/Emails/EM1-adr.png'
 import EM1cnt from '../assets/img/Emails/EM1-cnt.png'
 
-import mailman from '../assets/img/Mailman-idle.png'
-import mailmanSide from '../assets/img/Mailman-side-pkg.png'
-import mailmanFront from '../assets/img/Mailman-front-pkg.png'
+import EM2 from '../assets/img/Emails/EM2.png'
+import EM2adr from '../assets/img/Emails/EM2-adr.png'
+import EM2cnt from '../assets/img/Emails/EM2-cnt.png'
+import EM2lnk from '../assets/img/Emails/EM2-lnk.png'
+
+import EM3 from '../assets/img/Emails/EM3.png'
+import EM3adr from '../assets/img/Emails/EM3-adr.png'
+import EM3cnt from '../assets/img/Emails/EM3-cnt.png'
+import EM3lnk from '../assets/img/Emails/EM3-lnk.png'
+
+
 
 const ImageCarousel = ({ cid, images, dial1, dial2 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,12 +32,18 @@ const ImageCarousel = ({ cid, images, dial1, dial2 }) => {
   
     const handleAccept = () => {
       setButtonsDisabled(true);
-      createDialogueBox(dial1);    
+      closeDialogueBox();
+      setTimeout(() => {
+        createDialogueBox(dial1);  
+      }, 650); 
     };
   
     const handleDecline = () => {
       setButtonsDisabled(true);
-      createDialogueBox(dial2); 
+      closeDialogueBox();
+      setTimeout(() => {
+        createDialogueBox(dial2);  
+      }, 650); 
     };
   
     const renderIndicator = () => {
@@ -75,10 +90,17 @@ const ImageCarousel = ({ cid, images, dial1, dial2 }) => {
   ];
   
   const carouselImages2 = [ 
-    { src: mailman, alt: "Image 1" },
-    { src: mailmanSide, alt: "Image 2" },
-    { src: mailmanFront, alt: "Image 2" },
-    { src: mailman, alt: "Image 1" },
+    { src: EM2, alt: "Image 1", style: {width:'650px', height:'350px'} },
+    { src: EM2adr, alt: "Image 2",  style: {width:'800px', marginTop:'7%'} },
+    { src: EM2cnt, alt: "Image 2", style: {width:'700px', height:'350px'} },
+    { src: EM2lnk, alt: "Image 2",  style: {width:'800px', marginTop:'7%'} },
+  ];
+
+  const carouselImages3 = [ 
+    { src: EM3, alt: "Image 1", style: {width:'650px', height:'350px'} },
+    { src: EM3adr, alt: "Image 2",  style: {width:'800px', marginTop:'7%'} },
+    { src: EM3cnt, alt: "Image 2", style: {width:'700px', height:'350px'} },
+    { src: EM3lnk, alt: "Image 2",  style: {width:'800px', marginTop:'7%'} },
   ];
 
   function Slide5() {
@@ -88,9 +110,11 @@ const ImageCarousel = ({ cid, images, dial1, dial2 }) => {
         <button className='slide-back-button' onClick={() => navigateSlide(Slide4)}>Slide Back</button>
         <DialogueBox dialogues={Activity} />
         <div className='Email'>  
+          <img id='outside' src={outside} className='bg1' alt="Warehouse outside" style={{display: "none"}} />
           <img id='face' src={face} className='face image' alt="friendly mailman" style={{display: "none"}} />
-          <ImageCarousel cid={'carousel'} images={carouselImages1} dial1={Ans1} dial2={Ans2} />
-          <ImageCarousel cid={'carousel2'} images={carouselImages2} dial1={Ans1} dial2={Ans2} />
+          <ImageCarousel cid={'carousel'} images={carouselImages1} dial1={Ans11} dial2={Ans12} />
+          <ImageCarousel cid={'carousel2'} images={carouselImages2} dial1={Ans21} dial2={Ans22} />
+          <ImageCarousel cid={'carousel3'} images={carouselImages3} dial1={Ans31} dial2={Ans32} />
         </div>
       </div>
     );

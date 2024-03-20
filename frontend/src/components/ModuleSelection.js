@@ -7,7 +7,7 @@ import { isCookiePresent } from '../assets/js/helpers.js';
 const modules = [
   { id: 'c1', title: 'MODULE 1', description: 'MODULE 1 description', bgImage: require('../assets/img/bg1.jpg'), defaultChecked: true, link: '/module/cyberthreats' },
   { id: 'c2', title: 'MODULE 2', description: 'MODULE 2 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module2' },
-  { id: 'c3', title: 'Email Security', description: '', bgImage: require('../assets/img/logo.png'), link: '/module/emaildefence' },
+  { id: 'c3', title: 'Email Security', description: 'Learn about the essential strategies to safeguard your email usage and communication. ', bgImage: require('../assets/img/logo.png'), link: '/module/emaildefence' },
   { id: 'c4', title: 'MODULE 4', description: 'MODULE 4 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module4' },
 ];
 

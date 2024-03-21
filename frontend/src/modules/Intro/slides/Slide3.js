@@ -31,7 +31,7 @@ function Slide3() {
       answer: 'Risk'
     },
     {
-        text: 'An ___________ is an actual action taken to exploit a vulnerability and breach security.',
+        text: 'A ___________ is an actual action taken to exploit a vulnerability and breach security.',
         options: ['vulnerability', 'threat', 'attack', 'risk'],
         answer: 'attack'
     },

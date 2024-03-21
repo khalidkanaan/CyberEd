@@ -56,7 +56,7 @@ export const randyThanks = [
   },
   {
     text: 'Listen closely, dear user. To shield your precious files from nefarious characters ' +
-          'like me, you need to make backups either online or on a separate drive.',
+          'like me, you need to make backups either online or on an external hard drive.',
     action: () => toggleElements(['google-drive-empty']),
   },
   {
@@ -85,7 +85,8 @@ export const randyCongrats = [
   },
   {
     text: 'Or.. for a more decisive move 😰, you can opt for the NUCLEAR option and reset your ' +
-          'computer entirely which deletes everything on it. The choice is yours my unsuspecting friend!',
+          'computer entirely which deletes everything on it. Make sure to create backups of all your important ' +
+          'files and folders if you decide to go with this route.',
     action: () => toggleElements(['nuclear-option']),
     okActions: [
       () => toggleElements(randySpeaker, false, true),

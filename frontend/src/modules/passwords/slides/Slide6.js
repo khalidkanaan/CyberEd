@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../assets/css/Passwords.styling.css';
 import DialogueBox from '../../../components/DialogueBox'; // Import DialogueBox
 import { dialogues6 } from '../assets/dialogues'; // Import dialogues5

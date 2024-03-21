@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { navigateSlide } from '../../../assets/js/helpers';
 import '../assets/css/Passwords.styling.css';
-import DialogueBox from '../../../components/DialogueBox'; // Import DialogueBox
-import { dialogues5 } from '../assets/dialogues'; // Import dialogues5
+import DialogueBox from '../../../components/DialogueBox';
+import { dialogues5 } from '../assets/dialogues';
 import coolRobot from '../assets/img/coolRobot.gif'
-import Slide4 from './Slide4'; // Import Slide4
+import Slide4 from './Slide4';
 import Slide6 from './Slide6';
 
 function Slide5() {
@@ -20,10 +20,10 @@ function Slide5() {
         // Check password requirements
         const hasUppercase = /[A-Z]/.test(value);
         const hasLowercase = /[a-z]/.test(value);
-        const hasSymbol = /[!@#$%^&*()_+={}\[\]:;<>,.?~]/.test(value);
+        const hasSymbol = /[!@#$%^&*()_+={}[\]:;<>,.?~]/.test(value);
         const hasDigit = /\d/.test(value);
         const hasAtLeast12Characters = value.length >= 12;
-        const containsApril = value.toLowerCase().includes('april'); // Case-insensitive check
+        const containsApril = value.toLowerCase().includes('april');
        
         setCheckbox1(hasUppercase);
         setCheckbox2(hasSymbol);
@@ -40,7 +40,7 @@ function Slide5() {
 
     const evaluatePassword = () => {
         let score = 0;
-    
+
         // Check password length
         if (inputValue.length >= 12) {
             score += 1;

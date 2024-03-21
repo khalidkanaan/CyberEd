@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import '../assets/css/styling.css'
 import { navigateSlide, toggleElements, createDialogueBox } from '../../../assets/js/helpers';
 import Draggable from 'react-draggable';
 import DialogueBox from '../../../components/DialogueBox';
 import { dialogues2, randyThanks, randyCongrats, ripRandy } from '../assets/dialogues';
-import Slide1 from './Slide1';
+import Slide3Intro from '../../Intro/slides/Slide3';
 import robot from '../assets/img/robot-helper.gif';
 import randySpeaker from '../assets/img/malware/ransomware/randy-speaker.png';
 import randy from '../assets/img/malware/ransomware/randy.gif';
@@ -164,7 +165,7 @@ function Slide2() {
 
   return (
     <div>
-      <button className='slide-back-button' onClick={() => navigateSlide(Slide1)}>Slide Back</button>
+      <button className='slide-back-button' onClick={() => navigateSlide(Slide3Intro)}>Slide Back</button>
       <DialogueBox dialogues={dialogues2} />
       <button id="give-coin-button" className='golden-button' style={{display: "none"}} onClick={giveCoin}>GIVE 1 COIN</button>
       <img id="coin" className={coinClass} style={{display: "none"}} src={coin} alt="coin" />

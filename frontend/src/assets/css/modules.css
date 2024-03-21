@@ -80,6 +80,26 @@
     z-index: 50;
 }
 
+.middle-position-bigger {
+    position: absolute;
+    width: 35%;
+    bottom: 50%;
+    left: 30.5%;
+    z-index: 50;
+}
+
+.move-left-and-up {
+    left: 27%;
+    width: 22%;
+    bottom: 35%;
+}
+
+.move-right-and-up {
+    left: 50%;
+    width: 22%;
+    bottom: 35%;
+}
+
 .speaking-character {
     position: absolute;
     width: 15%;

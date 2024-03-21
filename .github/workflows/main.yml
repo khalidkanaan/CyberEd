@@ -1,0 +1,34 @@
+name: Express App CI
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies and run tests in backend
+      run: |
+        npm ci
+        npm install express jest mongodb
+        npm test
+      env:
+        MONGODB_URI: mongodb://localhost:27017
+      working-directory: backend

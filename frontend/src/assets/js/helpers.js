@@ -100,6 +100,7 @@ export function setOpacity(id, opacity) {
 }
 
 
+
 export const navigateSlide = (slide) => {
   const slideContainer = document.querySelector('#slide');
   if (slideContainer) {

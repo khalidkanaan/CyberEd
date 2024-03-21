@@ -13,6 +13,7 @@ function RegisterPage() {
   const [isFading, setIsFading] = useState(false);
   const [isCollapsing, setIsCollapsing] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,9 +48,12 @@ function RegisterPage() {
       setError(message);
       return;
     }
-  
-    // Redirect to login page upon successful registration
-    navigate('/login');
+
+    // Show success message and then redirect to login page
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      navigate('/login');
+    }, 1000); 
   };
 
   useEffect(() => {
@@ -72,7 +76,7 @@ function RegisterPage() {
       clearTimeout(timer2);
       clearTimeout(timer3);
     };
-  }, [error]);  
+  }, [error]);
 
   return (
     <BasePage>
@@ -105,6 +109,7 @@ function RegisterPage() {
                 }
               </div>
             )}
+            {showSuccessMessage && <div>Succesful Sign Up! ✔</div>}
           </div>
           <Link to="/login">
             Already have an account? Log in here

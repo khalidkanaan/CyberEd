@@ -90,6 +90,15 @@ export function toggleElements(ids, shouldShow = true, reverseAnimation = false,
   });
 }
 
+export function setOpacity(id, opacity) {
+  return new Promise((resolve) => {
+    var image = document.getElementById(id);
+    image.style.opacity = opacity;
+    image.style.display = 'block'; 
+    resolve(); 
+  });
+}
+
 
 
 export const navigateSlide = (slide) => {

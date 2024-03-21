@@ -5,7 +5,7 @@ import Slide2 from './slides/Slide2';
 
 function CyberThreats() {
   return (
-    <Module backLink="/" nextLink="/">
+    <Module backLink="/" nextLink="/module/passwords">
       <div id="slide">
         <Slide2 />
       </div>

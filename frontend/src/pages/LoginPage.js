@@ -12,6 +12,8 @@ function LoginPage() {
   const [error, setError] = useState(null);
   const [isFading, setIsFading] = useState(false);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false); 
+  const [showGuestMessage, setShowGuestMessage] = useState(false); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +38,25 @@ function LoginPage() {
     Cookies.set('username', data.username, { expires: 7 }); 
     Cookies.set('progress', data.progress, { expires: 7 }); 
 
-    navigate('/');
+    // Show success message and then redirect to main page
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      navigate('/');
+    }, 1000); 
+  };
+
+  const handleGuest = async (event) => {
+    event.preventDefault(); // Prevent default form submission  
+    Cookies.set('TEST-AUTH', '123', { expires: 7 });
+    Cookies.set('username', 'GuestUser', { expires: 7 });
+    Cookies.set('progress', 0);
+  
+    // Show success message and then redirect to main page
+    setShowGuestMessage(true);
+    setTimeout(() => {
+      setShowGuestMessage(false);
+      navigate('/');
+    }, 1000);
   };
 
   useEffect(() => {
@@ -69,15 +89,22 @@ function LoginPage() {
 
             <div className="input-container">
               <label>EMAIL</label>
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
             </div>
             <div className="input-container">
               <label>PASSWORD</label>
-              <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+              <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </div>
-          <button type="submit">LOGIN</button>
+            <button type="submit">LOGIN</button>
+            <button className='guestButton' onClick={handleGuest}>Try Guest Account!</button>
+
           <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
             {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
+            {showSuccessMessage && <div>Successful Login! ✔</div>}
+          </div>
+          <div className={`add-bottom-margin ${isCollapsing ? 'collapse' : ''}`}>
+            {error && <div className={`${isFading ? 'fade-out' : ''}`}>{error}</div>}
+            {showGuestMessage && <div>Guest Logged in! ✔</div>}
           </div>
           <Link to="/register">
             No account? Sign up here

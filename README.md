@@ -1,3 +1,5 @@
+[![CI Status](https://github.com/khalidkanaan/CyberEd_4907/actions/workflows/main.yml/badge.svg)](https://github.com/khalidkanaan/CyberEd_4907/actions/workflows/main.yml)
+
 # CyberEd_4907
 Educative Webapp for Teaching Basic Concepts of Cybersecurity
 

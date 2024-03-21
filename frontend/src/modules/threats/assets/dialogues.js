@@ -3,6 +3,7 @@ import Slide2 from '../slides/Slide2';
 import Slide3 from '../slides/Slide3';
 import Slide4 from '../slides/Slide4';
 import Slide5 from '../slides/Slide5';
+import Slide6 from '../slides/Slide6';
 
 const randySpeaker = ['ransomware-speaker'];
 const ransom = ['give-coin-button', 'bank', 'coin-counter']
@@ -382,6 +383,80 @@ export const trojanDialogue = [
             () => toggleElements(['robot', 'bigRobot'])),
     okActions: [
       () => toggleElements(['robot', 'bigRobot'], false, true),
+      () => setTimeout(() => navigateSlide(Slide6), 650)
+    ],
+  },
+];
+
+
+export const mitmDialogue = [
+  {
+    text: 'Your friendly robot guide is back and here to talk to you about the very fascinating topic of active attacks specifically the Man-in-the-Middle (MitM) attack!',
+    action: () => toggleElements(['malwares', 'sus1second'], false).then(
+            () => toggleElements(['robot', 'sus'])),
+  },
+  {
+    text: 'While other malwares, such as viruses, worms, and Trojans, passively infect systems and carry out malicious activities in the background of your system, ' +
+          'Man-in-the-Middle attacks involve hackers that actively intercept and manipulate the communication between two parties.',
+          action: () => toggleElements(['sus', 'mitm1'], false).then(
+                  () => toggleElements(['malwares', 'sus1second'])),
+  },
+  {
+    text: 'Imagine you\'re sending a secret message to your friend, but instead of your friend receiving it, a sneaky cyber attacker intercepts it in the middle! ' +
+          'That\'s why it\'s called a Man-in-the-Middle attack.',
+          action: () => toggleElements(['malwares', 'sus1second'], false).then(
+                  () => toggleElements(['mitm1'])),
+  },
+  {
+    text: 'These cyber attackers sneak into the communication flow between you and your friend, like a digital spy! ' +
+          'They can achieve this by exploiting weaknesses in the network to slip into the system undetected. Once they\'re ' +
+          'in, they can eavesdrop on your messages or even tamper with them!',
+          action: () => toggleElements(['mitm1', 'hackerFriend'], false).then(
+                  () => toggleElements(['mitm3'])),
+  },
+  {
+    text: 'But fret not, we can easily defend ourselves against these digital bandit! ' +
+          'Our first point of defense against Man-in-the-Middle attacks is the use of encryption to scramble our messages so only ' +
+          'the intended recipient of your message can decode and read them. It\'s like writing in invisible ink!',
+          action: () => toggleElements(['mitm3', 'emailEncrypted', 'encryption', 'decryption'], false).then(
+                  () => toggleElements(['hackerFriend'])),
+  },
+  {
+    text: 'When a Man-in-the-Middle attacker tries to listen in on an encyrpted converstion, the only thing they\'ll be able to see are random letters and symbols ' +
+          'called cyphertext. However, without encryption the attacker will be able to plainly see your messages and read them. Which is why unencrypted text is commonly  ' +
+          'referred to as plaintext.',
+          action: () => toggleElements(['mitm3', 'Phones', 'mitm2', 'hackerFriend'], false).then(
+                  () => toggleElements(['robot', 'emailEncrypted', 'encryption', 'decryption'])),
+  },
+  {
+    text: 'Try it out! In this example you and your friend are having a conversation over social media. The evil Man-in-the-Middle attacker is listening in on the conversation',
+    action: () => toggleElements(['emailEncrypted', 'encryption', 'decryption'], false).then(
+            () => toggleElements(['robot'], false, true).then(
+            () => toggleElements(['Phones', 'mitm2', 'mitmText']))),
+  },
+  {
+    text: 'As you can see, the hacker is able to read the plaintext messages exactly as they were written. Try sending some messages yourself, choose whichever phone you like ' +
+          'and send a message to your friend. You can also use your friend\'s phone to reply back if you want.',
+          action: () => toggleElements(['encryptDecrypt'], false)
+  },
+  {
+    text: 'Now then, let\'s go ahead and add encryption to our conversation. Click the encryption button to enable and disable encryption to see the difference in text.',
+    action: () => toggleElements(['encryptDecrypt']),
+  }
+]
+
+export const mitmDialogue2 = [
+  {
+    text: 'As you can see, when encryption is enabled, the Man-in-the-Middle attacker will not be able to read any of the messages.',
+    action: () => toggleElements(['robot']),
+  },
+  {
+    text: 'Thanks to encryption, we can outsmart those cyber crooks and keep our digital conversations safe and sound! ' +
+          'Remember, knowledge is power, so stay curious and keep exploring the exciting world of cybersecurity!',
+    okActions: [
+      () => {
+        window.location.href = '/';
+      } 
     ],
   },
 ];

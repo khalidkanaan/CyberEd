@@ -5,7 +5,7 @@ import Slide1 from './slides/Slide1';
 
 function CyberIntro() {
   return (
-    <Module backLink="/" nextLink="/">
+    <Module backLink="/" nextLink="/module/cyberthreats">
       <div id="slide">
         <Slide1 />
       </div>

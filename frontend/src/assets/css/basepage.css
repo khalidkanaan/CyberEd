@@ -76,28 +76,36 @@ code {
   
 .dropdown-content {
   display: none;
+  min-width: 125px;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  right: -50px;
   cursor: pointer;
 }
-  
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-  
-.dropdown-content a:hover {background-color: #ddd;}
-  
-.dropdown:hover .dropdown-content {display: block;}
-  
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-  
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.unclickable-link {
+  color: black; 
+  cursor: default; 
+  text-decoration: none; 
+  pointer-events: none; 
+}
+
 
 /*
   Log In Button
@@ -141,4 +149,25 @@ code {
   filter: sepia(0.5) saturate(100%);
   clip-path: polygon(62% 1%, 77% 6%, 88% 15%, 94% 25%, 99% 39%, 100% 49%, 100% 100%, 0 100%, 0 0, 24% 0);
   transform: rotate(360deg);
+}
+
+/* Additional styles for dropdown content width */
+.dropdown:hover .dropdown-content {
+  min-width: unset; /* Remove the minimum width */
+  width: max-content; /* Set the width to adjust to the content */
+}
+
+
+.logout-img {
+  width: 50px;
+  border-radius: 5px;
+  transition: filter 0.3s, clip-path 0.7s, transform 0.7s;
+  clip-path: polygon(62% 1%, 77% 6%, 88% 15%, 94% 25%, 99% 39%, 100% 49%, 100% 100%, 0 100%, 0 0, 24% 0);
+  transform: rotate(360deg);
+}
+
+.img-container:hover .logout-img {
+  filter: sepia(0.5) saturate(100%);
+  clip-path: polygon(28% 20%, 35% 39%, 43% 52%, 52% 65%, 74% 81%, 100% 88%, 100% 100%, 0 100%, 0 0, 24% 0);
+  transform: rotate(0deg);
 }

@@ -1,6 +1,7 @@
 import { toggleElements, createDialogueBox, navigateSlide } from '../../../assets/js/helpers';
 import Slide2 from '../slides/Slide2';
 import Slide3 from '../slides/Slide3';
+import Slide4 from '../slides/Slide4';
 import Slide5 from '../slides/Slide5';
 
 const randySpeaker = ['ransomware-speaker'];
@@ -247,7 +248,7 @@ export const wormsDialogue = [
     text: 'I won\'t explain to you how to get rid of me, I\'ll let that silly robot handle the rest of the explaination.',
     okActions: [
       () => toggleElements(['worm-play', 'noKaspersky', 'firewall', 'wormSpeaker'], false, true),
-      () => createDialogueBox(wormsDialogue2),
+      () => setTimeout(() => navigateSlide(Slide4), 650)
     ],
   },
 ]
@@ -311,6 +312,75 @@ export const wormsEnd = [
           'the SLIDE BACK button in the bottom left corner of the screen to relearn the content. Otherwise, you can click Ok to start the next exercise',
     okActions: [
       () => navigateSlide(Slide5),
+    ],
+  },
+];
+
+export const trojanDialogue = [
+  {
+    text: 'In the shadowy corners of the digital realm, DeceptiCode, a cunning Trojan, is addressing the user directly.',
+    action: () => toggleElements(['trojanSpeaker'], false).then(
+            () => toggleElements(['robot', 'trojanGif'])),
+  },
+  {
+    text: 'Greetings, dear user! Welcome to the realm of Trojan horses, where deception is our weapon and trickery ' +
+          'our art. Allow me to enlighten you about our craft.',
+    action: () => toggleElements(['robot', 'trojanImg'], false).then(
+            () => toggleElements(['trojanSpeaker', 'trojanGif'])),
+  },
+  {
+    text: 'A Trojan, my dear user, is a master of disguise among malware. We masquerade as innocent software, ' +
+          'waiting for the opportune moment to strike.',
+    action: () => toggleElements(['trojanGif', 'trojanSoldiers'], false).then(
+            () => toggleElements(['trojanImg'])),
+  },
+  {
+    text: 'Like the cunning wooden horse used to sneak soldiers into Troy, Trojans disguise themselves as legitimate software or' +
+          'files to trick users into installing them. You see, we often masquerade as harmless or ' +
+          'desirable programs, such as games, utilities, or software updates.',
+    action: () => toggleElements(['trojanImg', 'wolfMad'], false).then(
+            () => toggleElements(['trojanSoldiers'])),
+  },
+  {
+    text: 'Once invited in, we silently infiltrate your system, ready to carry out our '+
+          'malicious deeds when the time is right.',
+    action: () => toggleElements(['trojanSoldiers', 'wolfInSheep'], false).then(
+            () => toggleElements(['wolfMad'])),
+  },
+  {
+    text: 'But here\'s the real twist: unlike viruses and worms, we Trojans don\'t replicate ourselves or spread autonomously. '+
+          'Instead, we rely on social engineering tactics to trick users into willingly installing us usually by opening an infected file '+
+          'or clicking on a malicious link. It\'s like inviting a wolf in sheep\'s clothing into your digital home!',
+    action: () => toggleElements(['wolfMad', 'popups'], false).then(
+            () => toggleElements(['wolfInSheep'])),
+  },
+  {
+    text: 'Social engineering is the art of manipulation in the digital realm! It\'s like a digital con game, where '+
+          'we exploit human psychology to gain access to your system. Phishing, for instance, is a common tactic where we send '+
+          'deceptive emails or create fake websites that appear legitimate, tricking users into revealing sensitive information or downloading malicious software.',
+    action: () => toggleElements(['wolfInSheep', 'lightLaughing'], false).then(
+            () => toggleElements(['popups'])),
+  },
+  {
+    text: 'And here\'s the real kicker: Trojans can be challenging to detect because they often appear harmless or legitimate to antivirus software. '+
+          'Unlike viruses, which can be identified through signature-based detection methods, Trojans may require more advanced detection techniques.',
+    action: () => toggleElements(['popups', 'trojanEnemy'], false).then(
+            () => toggleElements(['lightLaughing'])),
+  },
+  {
+    text: 'Behavior analysis is one such technique, where antivirus software monitors the behavior of programs and looks for '+
+          'suspicious activities that could indicate malicious intent. Heuristic scanning, on the other hand, involves analyzing the ' +
+          'code of a program for characteristics commonly associated with malware, even if no specific virus signature is present.',
+    action: () => toggleElements(['lightLaughing', 'robot', 'bigRobot'], false).then(
+            () => toggleElements(['trojanSpeaker', 'trojanEnemy'])),
+  },
+  {
+    text: 'So, dear user, stay wary of our deceptive ways, for in the digital jungle, the Trojan lurks, waiting to strike when least '+
+          'expected. Arm yourself with knowledge and caution, for only then can you outsmart even the craftiest of Trojans like myself!',
+    action: () => toggleElements(['trojanEnemy', 'trojanSpeaker'], false).then(
+            () => toggleElements(['robot', 'bigRobot'])),
+    okActions: [
+      () => toggleElements(['robot', 'bigRobot'], false, true),
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { navigateSlide} from '../../../assets/js/helpers';
 import DialogueBox from '../../../components/DialogueBox';
 import { Phishing } from '../assets/js/dailogues'

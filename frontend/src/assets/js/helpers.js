@@ -119,3 +119,13 @@ export const createDialogueBox = (dialogues) => {
   const dialogueBox = <DialogueBox dialogues={dialogues} />;
   root.render(dialogueBox);
 };
+
+export const closeDialogueBox = () => {
+  const dialogueBox = document.querySelector('.dialogue-box');
+  if (dialogueBox) {
+    dialogueBox.classList.add('closing');
+    setTimeout(() => {
+      dialogueBox.remove();
+    }, 500);
+  }
+};

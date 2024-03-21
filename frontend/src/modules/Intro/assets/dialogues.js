@@ -77,7 +77,7 @@ export const intro2 = [
   },
   {
     text: 'For instance, In video games, if a player cheats by altering the game code to gain an unfair advantage, this compromises ' +
-          'the integrity of the game. This is why it’s appropriate to tell these cheaters to have some integrity >:(',
+          'the integrity of the game because the cheater\'s game has been altered to be different than other players.',
     action: () => toggleElements(['integrity', 'availability', 'stoolAMissing'], false).then(() => 
                   toggleElements(['tf2cheater', 'stoolIMissing'])),
   },

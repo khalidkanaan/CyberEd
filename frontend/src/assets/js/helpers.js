@@ -90,6 +90,15 @@ export function toggleElements(ids, shouldShow = true, reverseAnimation = false,
   });
 }
 
+export function setOpacity(id, opacity) {
+  return new Promise((resolve) => {
+    var image = document.getElementById(id);
+    image.style.opacity = opacity;
+    image.style.display = 'block'; 
+    resolve(); 
+  });
+}
+
 
 
 export const navigateSlide = (slide) => {
@@ -109,4 +118,14 @@ export const createDialogueBox = (dialogues) => {
   const root = createRoot(dialogueDiv);
   const dialogueBox = <DialogueBox dialogues={dialogues} />;
   root.render(dialogueBox);
+};
+
+export const closeDialogueBox = () => {
+  const dialogueBox = document.querySelector('.dialogue-box');
+  if (dialogueBox) {
+    dialogueBox.classList.add('closing');
+    setTimeout(() => {
+      dialogueBox.remove();
+    }, 500);
+  }
 };

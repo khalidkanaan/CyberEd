@@ -38,8 +38,7 @@ export const intro = [
     ids: passwordId,
   },
   {
-    text: 'Are you ready to dive in, learn the secrets of cybersecurity, and become ' +
-    'a hero of the virtual realm? Great! Let the Cybersecurity Quest begin! ',
+    text: 'Are you prepared to unlock the secrets of strong passwords and authentication? Fantastic! Brace yourself to delve deep into the realm of cybersecurity and become the digital hero! ',
     okActions: [
       () => toggleElements(all, false, true),
       () => navigateSlide(Slide2)
@@ -55,7 +54,7 @@ export const dialogues2 = [
   },
   { 
     text: 'Password managers not only store your passwords securely but also generate complex and unique passwords for you! ' +
-          'With the help of a password manager, you only need to remember one master password to access your secret vault.',
+          'With the help of a password manager like LastPass or Bitwarden, you only need to remember one master password to access your secret vault.',
     action: () =>  toggleElements(pwdManager1Id, false).then(() => toggleElements(pwdManager2Id)),
     ids: pwdManager2Id,
   },
@@ -74,7 +73,7 @@ export const dialogues3 = [
     action: () => toggleElements(['robot','lock']),
   },
   { 
-    text: 'Some examples of 2FA include receiving a code on your phone, using biometric data like fingerprints, or employing hardware tokens for an added layer of security.',
+    text: 'Some examples of 2FA include receiving a code on your phone, using biometric data like fingerprints, or employing hardware tokens like a USB for an added layer of security.',
     action: () => toggleElements(['twoFA']),
   },
   { 
@@ -89,22 +88,23 @@ export const dialogues3 = [
 export const dialogues4 = [
   { 
     text: 'Let\'s start our adventure to create a strong password. See this weak password? The naughty Haunter likes these because they are easy to guess! Let\'s make it stronger to keep Haunter away.',
-    action: () => toggleElements(['updateButton'], false).then(() => toggleElements(['robot','lock', 'haunter'])),    
+    action: () => toggleElements(['robot', 'haunter', 'weakPass'])    
   },
   { 
-    text: 'This password is too easy for Haunter! Let\'s make it better by adding some uppercase letters. Hit the button to see the change. Adding uppercase letters is like using magical shields that protect your password!',
-    action: () => toggleElements(['twoFA', 'updateButton']),
+    text: 'This password is too easy for Haunter! Let\'s make it better by adding some uppercase letters. Hit the next button to see the change. Adding uppercase letters is like using magical shields that protect your password!',
+    action: () => toggleElements(['midPass', 'chibiHaunter'], false).then(() => toggleElements(['weakPass', 'haunter']))
   },
   { 
-    text: 'Great job! Uppercase letters have made your password tougher. But Haunter is still trying! Let\'s confuse him by adding some symbols. Hit the button to see the change.',
-    action: () => toggleElements(['robot', 'updateButton']),
+    text: 'Great job! Uppercase letters have made your password tougher. But Haunter is still trying! Let\'s confuse him by adding some symbols. Hit the next button to see the change.',
+    action: () => toggleElements(['strongPass', 'weakPass', 'haunter', 'sadHaunter'], false).then(() => toggleElements(['midPass', 'chibiHaunter']))
   },
   { 
     text: 'Awesome! Symbols are like secret codes that add extra protection. But we\'re not done yet! Let\'s make the password longer. A strong password is usually 12 characters long, but going for 14 or more is like building a big wall!',
-    action: () => toggleElements(['robot', 'updateButton']),
+    action: () => toggleElements(['strongerPass', 'midPass', 'chibiHaunter', 'superSadHaunter'], false).then(() => toggleElements(['strongPass', 'sadHaunter']))
   },
   { 
     text: 'Fantastic! A longer password is like a maze that Haunter can\'t find his way through. You\'ve just made a strong password that Haunter can\'t guess! Remember, using different passwords for each of your accounts is like having a different key for every door.',
+    action: () => toggleElements(['strongPass', 'sadHaunter'], false).then(() => toggleElements(['robot', 'strongerPass', 'superSadHaunter'])),
     okActions: [
       () => navigateSlide(Slide5)
     ],
@@ -113,32 +113,26 @@ export const dialogues4 = [
 
 export const dialogues5 = [
   {
-    text: 'Now that you have a better idea of strong passwords, let\'s create your very own strong password! A strong password depends on the password policy, so let\'s decide on our own password policy',
-    action: () => toggleElements(['form', 'robot', 'bar'], false).then(() => toggleElements(['robot2'])),
+    text: 'Now that you have a better understanding of strong passwords, let\'s establish your very own strong password! The strength of a password is reliant on the password policy in place.',
+    action:  () => toggleElements(['robot2']).then(() => toggleElements(['form', 'bar'], false)),
   },
-  {
-    text: '**Select Password Policy Options**: Input the minimum password length and check the boxes for your password policy. Once done, input a password into the text area to see how strong your password is!',
-    action: () => toggleElements(['robot2'], false).then(() => toggleElements(['robot', 'form', 'bar'])),
-  },
-  {
-    text: '   - **Uppercase Letters**: Add some uppercase letters to your password. Think of them as magical shields that protect your password!',
-  },
-  {
-    text: '   - **Symbols**: Include special symbols (like @, #, or $) to confuse any lurking Haunters. Symbols act like secret codes!',
-  },
-  {
-    text: '   - **Length**: Aim for at least 12 characters. Going for 14 or more is like building a big wall that Haunter can\'t climb!',
-  },
-  {
-    text: '2. **Input Your Password**: Type in your chosen password. Make sure it meets the policy options you selected.',
-  },
-  {
-    text: '3. **Strength Indicator**: Below the input field, you\'ll see a strength bar. It will show you how strong or weak your password is based on the policy options you chose.',
-  },
-  {
-    text: 'Remember, a strong password is like a maze that Haunter can\'t navigate. And just like having different keys for different doors, use unique passwords for each of your accounts!',
+  { 
+    text: 'For this next activity, input the minimum password length and generate a strong password using the word "april". Make sure the password checks all of the requirements from the password policy to ensure that your password is strong!',
     okActions: [
-      () => console.log('Wesh Khoya labass?'), // Optional action (you can customize this part)
+      () => toggleElements(['robot2'], false).then(() => toggleElements([ 'form', 'bar']))
     ],
   },
-];
+]
+
+export const dialogues6 = [
+  {
+    text: 'Bravo! You\'ve successfully completed this module.'+
+     'You\'ve delved into the core principles of robust passwords and authentication, and you\'ve even crafted your own unbreakable password!',
+    okActions: [
+      () => {
+        window.location.href = '/';
+      } 
+    ], 
+  },
+]
+

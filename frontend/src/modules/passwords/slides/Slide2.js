@@ -12,7 +12,7 @@ import Slide1 from './Slide1';
 function Slide2() {
   return (
     <div className='password'>
-      <h1>Slide 2</h1>
+ 
       <button className='slide-back-button' onClick={() => navigateSlide(Slide1)}>Slide Back</button>
       <DialogueBox dialogues={dialogues2}/>
       

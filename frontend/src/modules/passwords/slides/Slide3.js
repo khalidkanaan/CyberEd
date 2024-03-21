@@ -12,7 +12,7 @@ import lock from '../assets/img/Lock.gif'
 function Slide3() {
   return (
     <div className='password'>
-      <h1>Slide 3</h1>
+
       <button className='slide-back-button' onClick={() => navigateSlide(Slide2)}>Slide Back</button>
       <DialogueBox dialogues={dialogues3} />
 

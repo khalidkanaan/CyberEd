@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import CyberThreats from "./modules/threats/CyberThreats";
 import Passwords from "./modules/passwords/Passwords";
 import EmailDefence from "./modules/Module-Email/EmailDefence";
+import SafeBrowsing from "./modules/SafeBrowsing/SafeBrowsing";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="module/cyberthreats" element={<ProtectedRoute><CyberThreats /></ProtectedRoute>} />
             <Route path="module/passwords" element={<ProtectedRoute><Passwords /></ProtectedRoute>} />
             <Route path="module/emaildefence" element={<ProtectedRoute><EmailDefence /></ProtectedRoute>} />
+            <Route path="module/safebrowsing" element={<ProtectedRoute><SafeBrowsing /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

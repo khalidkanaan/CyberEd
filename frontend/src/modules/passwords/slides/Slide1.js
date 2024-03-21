@@ -10,7 +10,7 @@ import password from '../assets/img/password.gif'
 function Slide1() {
   return (
     <div className= 'password'>
-      <h1>Slide 1</h1>
+
       <DialogueBox dialogues={intro}/>
       <img id='robot' src={coolRobot} className='robot image' alt="friendly website robot" style={{display: "none"}} />
       

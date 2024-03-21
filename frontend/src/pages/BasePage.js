@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/basepage.css';
-import { isCookiePresent, handleLogout } from '../assets/js/helpers.js'; // Add handleLogout here
+import { isCookiePresent, handleLogout } from '../assets/js/helpers.js'; 
 import logo from '../assets/img/logo-white.png';
 import loginImage from '../assets/img/login-image.png';
-import profile from '../assets/img/drinking.gif';
 import Cookies from 'js-cookie';
 
 function BasePage(props) {
@@ -27,10 +26,13 @@ function BasePage(props) {
           </Link>
         ) : (
           <div className="dropdown">
-            <img src={profile} alt="User" className="user-icon" onClick={toggleDropdown}/>
+            <div className='img-container' onClick={toggleDropdown}>
+              <div className="login-text">{username}</div>
+              <img className='logout-img' src={loginImage} alt="Login" />
+            </div>
             {isDropdownOpen && (
               <div className="dropdown-content">
-                <Link to="/profile">Profile - {username}</Link>
+                <span className="unclickable-link">Profile - {username}</span>
                 <Link to="/" onClick={handleLogout}>Logout</Link>
               </div>
             )}

@@ -23,8 +23,9 @@
 
 .Email .bg1{
     position: absolute;
-    right: 15%;
-    width: 70%;
+    right: 7.5%;
+    width: 85%;
+    height: 500px;
     border-radius: 15px;
     margin-top: 1%;
     z-index: 0;
@@ -33,18 +34,15 @@
 .Email .bg2{
     position: absolute;
     width: 85%;
+    height: 450px;
     right: 7.5%;
     border-radius: 15px;
-    margin-top: 1%;
+    margin-top: -1%;
     z-index: 0;
 }
 
-.Email .bg3{
-    position: absolute;
-    right: 12.5%;
-    width: 75%;
-    border-radius: 15px;
-    z-index: 0;
+.Email .lessop{
+    opacity: 0.5;
 }
 
 .Email .sorting-image-container {
@@ -55,6 +53,31 @@
     max-height: 44%; /* This will override the max-height from .image-container */
 }
 
+.Email .example-image-container {
+    position: absolute;
+    border-color: black;
+    background-color: rgb(0, 0, 0, 0.3);
+    top: 40%;
+    left: 50%;
+    min-height: 30%; 
+    max-height: 44%; 
+    z-index: 100;
+}
+.Email .Qs-image-container {
+    position: absolute;
+    border-color: black;
+    background-color: rgb(0, 0, 0, 0.3);
+    top: 30%;
+    left: 30%;
+    width: 150px;
+    min-height: 20%; 
+    z-index: 100;
+}
+.Email .example-image-container img,
+.Email .Qs-image-container img{
+    width: 95%;
+}
+
 
 .Email .image {
     width: auto;
@@ -62,18 +85,105 @@
     border-radius: 5px;
 }
 
+.Email .displays{
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 10px;
+    top: 20%;
+    left: 22%;
+    width: 250px;
+    height: 250px;
+    z-index: 100000;
+}
+.Email .displays2{
+    position: absolute;
+    border: 5px solid black;
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    top: 15%;
+    left: 13%;
+    width: 550px;
+    height: 350px;
+}
+
+.Email .clip{
+    position: absolute;
+    top: 20%;
+    left: 62%;
+    width: 250px;
+    height: 250px;
+    z-index: 100000;
+}
+
+.Email .inspect{
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 10px;
+    opacity: 1.0;
+    top: 2%;
+    left: 28%;
+    width: 45%;
+    height: 470px;
+}
+.Email .inspect2{
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 10px;
+    opacity: 1.0;
+    top: 12%;
+    left: 10%;
+    width: 35%;
+    height: 250px;
+}
+.Email .inspect3{
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 10px;
+    opacity: 1.0;
+    top: 20%;
+    left: 48%;
+    width: 43%;
+    height: 150px;
+}
+
+.Email .arrow{
+    position: absolute;
+    width: 10%;
+    z-index: 100000;
+}
+.Email .arrow2{
+    position: absolute;
+    width: 5%;
+    left: 15%;
+    top: 30%;
+    z-index: 100000;
+}
+
+
+.Email .magnify{
+    position: absolute;
+    top: 20%;
+    left: 77%;
+    padding: 5px;
+    border: 5px solid black;
+    background-color: rgb(0, 0, 0, 0.3);
+    width: 10%;
+    z-index: 100000;
+}
+
 .Email .mailman {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
+    width: 100px;
 }
 
 .Email .mailmanalt {
     position: absolute;
-    top: 60%;
-    left: 35%;
+    top: 45%;
+    left: 32%;
     transform: translate(-50%, -50%);
     width: 150px;
     filter: brightness(125%);
@@ -82,17 +192,17 @@
 
 .Email .mailmanalt2 {
     position: absolute;
-    top: 60%;
+    top: 45%;
     left: 65%;
     transform: translate(-50%, -50%);
-    width: 120px;
+    width: 110px;
     filter: brightness(90%);
     z-index: 1;
 }
 
 .Email .mailmanalt3 {
     position: absolute;
-    top: 60%;
+    top: 45%;
     left: 55%;
     transform: translate(-50%, -50%);
     width: 150px;
@@ -111,8 +221,10 @@
 
 .Email .door {
     position: absolute;
-    right: 60%;
-    top: 25%;
+    right: 61.5%;
+    top: 22%;
+    width: 26%;
+    height: 270px;
     transition: background-color 0.3s ease; 
 }
 
@@ -122,8 +234,8 @@
 
 .Email #key-move-div{
     position: absolute;
-    top: 45%;
-    left: 42%;
+    top: 33%;
+    left: 43%;
 }
 
 .Email .key {
@@ -140,6 +252,102 @@
     left: 45.5%;
 }
 
+.Email .laptop{
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    width: 300px;
+    height: 200px;
+    z-index: 100000;
+}
+
+.Email .inputForm{
+    position: absolute;
+    opacity: 1.0;
+    left: 20%;
+    top: 47%;
+    border-radius: 10px;
+    padding: 25px;
+    padding-right: 170px;
+    background-color: blueviolet;
+    
+}
+.Email .inputForm fieldset{
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 5px;
+    text-transform: capitalize;
+}
+.Email .inputForm label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffffff; 
+}
+.Email .inputForm button[type="submit"]{
+    padding: 15px 15px;
+    background-color: rgb(219, 193, 108); 
+    font-family: 'Press Start 2P Regular', sans-serif;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    cursor: pointer;
+    box-shadow: inset 0 -8px 7px 2px rgba(0, 0, 0, 0.3);
+}
+.outputBox {
+    position: absolute;
+    top: 51%;
+    left: 33.5%;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px; 
+    height: 50px; 
+    margin-left: 20px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+.outputBox .output {
+    position: relative;
+    bottom: 85%;
+    font-size: 40px;
+    font-weight: bolder;
+    color: green; 
+    
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.Email .image-carousel{
+    position: absolute;
+    left: 22%;
+    top: 2%;
+    background-color: rgba(137, 43, 226, 0.8);
+    border-radius: 10px;
+    width: 55%;
+    height: 65%;
+    padding: 0 10px;
+}
+.Email .carousel-content{
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+    height: 82%;
+}
+
+.Email .carousel-button{
+    margin-top: 10px;
+    padding: 15px 15px;
+    background-color: green; 
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Press Start 2P Regular', sans-serif;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    box-shadow: inset 0 -8px 7px 2px rgba(0, 0, 0, 0.3);
+}
 /* Define the keyframes for the glowing effect */
 @keyframes glow {
     0% {

@@ -67,6 +67,11 @@
   align-self: flex-end; /* This will align the button to the start of the flex container */
 }
 
+.lr-form .guestButton{
+  margin: auto;
+  background-color: navy;
+}
+
 .logo-class {
   margin-bottom: 35px;
 }

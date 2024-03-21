@@ -3,7 +3,6 @@ import { navigateSlide } from '../../../assets/js/helpers';
 import '../assets/css/Passwords.styling.css';
 import DialogueBox from '../../../components/DialogueBox'; // Import DialogueBox
 import { dialogues5 } from '../assets/dialogues'; // Import dialogues5
-import robot from '../assets/img/robotChill.gif';
 import coolRobot from '../assets/img/coolRobot.gif'
 import Slide4 from './Slide4'; // Import Slide4
 import Slide6 from './Slide6';
@@ -16,7 +15,6 @@ function Slide5() {
     const [checkbox5, setCheckbox5] = useState(false);
     const [checkbox6, setCheckbox6] = useState(false);
     const [inputValue, setInputValue] = useState('');
-    const [numberValue, setNumberValue] = useState(12);
 
     const handlePasswordChange = (value) => {
         // Check password requirements
@@ -40,15 +38,8 @@ function Slide5() {
         handlePasswordChange(e.target.value); // Automatically check checkboxes when input changes
     };
 
-    const handleNumberInputChange = (e) => {
-        setNumberValue(e.target.value);
-    };
-
     const evaluatePassword = () => {
         let score = 0;
-    
-        // If no checkboxes are selected, consider the password as meeting the policy by default
-        const noRequirementsSelected = !checkbox1 && !checkbox2 && !checkbox3 && !checkbox4;
     
         // Check password length
         if (inputValue.length >= 12) {
@@ -113,22 +104,22 @@ function Slide5() {
                 <fieldset>
                     <legend>Password Policy</legend>
                     <label>
-                        <input type="checkbox" id='checkbox5' checked={checkbox5} className='styled-checkbox' />
+                        <input type="checkbox" id='checkbox5' checked={checkbox5} className='styled-checkbox'/>
                         Minimum password length: 12 characters
                     </label><br />
     
                     <label>
-                        <input type="checkbox" id='checkbox1' checked={checkbox1} className='styled-checkbox'  />
+                        <input type="checkbox" id='checkbox1' checked={checkbox1} className='styled-checkbox'/>
                         Must include at least 1 uppercase letter
                     </label><br />
     
                     <label>
-                        <input type="checkbox" id='checkbox2' checked={checkbox4} className='styled-checkbox'  />
+                        <input type="checkbox" id='checkbox2' checked={checkbox4} className='styled-checkbox'/>
                         Must include at least 1 lowercase letter
                     </label><br />
     
                     <label>
-                        <input type="checkbox" id='checkbox3' checked={checkbox2} className='styled-checkbox' />
+                        <input type="checkbox" id='checkbox3' checked={checkbox2} className='styled-checkbox'/>
                         Must include at least 1 symbol
                     </label><br />
     

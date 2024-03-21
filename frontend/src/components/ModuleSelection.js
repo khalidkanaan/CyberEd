@@ -5,11 +5,10 @@ import clickGif from'../assets/img/click-login.gif'
 import { isCookiePresent } from '../assets/js/helpers.js';
 
 const modules = [
-  { id: 'c0', title: 'MODULE 0', description: 'MODULE 0 description', bgImage: require('../assets/img/bg1.jpg'), defaultChecked: true, link: '/module/cybersecurity-intro' },
-  { id: 'c1', title: 'MODULE 1', description: 'MODULE 1 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module/cyberthreats' },
+  { id: 'c0', title: 'Intro To Cybersecurity', description: 'Learn about the basics of Cybersecurity. Differentiate between the C.I.A Triad and other important Cybersecurity terminologies', bgImage: require('../assets/img/intro.gif'), defaultChecked: true, link: '/module/cybersecurity-intro' },
+  { id: 'c1', title: 'The Digital Underworld', description: 'Learn about the various types of threats and attacks and how to deal with them. This module includes information on Viruses, Ransomware, Worms, and Trojans, along with DDoS and Man-in-the-Middle attacks.', bgImage: require('../assets/img/threats.gif'), link: '/module/cyberthreats' },
   { id: 'c2', title: 'Passwords & Authentication', description: 'Learn about strong password usage, password managers and two-factor authentication.', bgImage: require('../assets/img/module2.png'), link: '/module/passwords' },
   { id: 'c3', title: 'Email Security', description: 'Learn about the essential strategies to safeguard your email usage and communication. ', bgImage: require('../assets/img/logo.png'), link: '/module/emaildefence' },
-  { id: 'c4', title: 'MODULE 4', description: 'MODULE 4 description', bgImage: require('../assets/img/bg1.jpg'), link: '/module4' },
 ];
 
 function ModuleSelection() {

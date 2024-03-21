@@ -8,12 +8,11 @@ const robotId = ['robot'];
 const malwaresIds = ['malware-img-div', 'virus', 'ransomware', 'trojan', 'worm', 'antivirus-img-div', 'kaspersky', 'shield'];
 const villainId = ['villain-img-div', 'villain'];
 const passwordId = ['password-img-div', 'password'];
-const pwdManager1Id = ['pwdmanager1-img-div', 'pwdmanager1']; // Add this line
-const pwdManager2Id = ['pwdmanager2-img-div', 'pwdmanager2']; // Add this line
-const twoFAId = ['twoFA']; // Add this line
-const lockId = ['lock']; // Add this line
-const robotChillId = []
-const all = [...robotId, ...malwaresIds, ...villainId, ...passwordId, ...pwdManager1Id, ...pwdManager2Id, ...twoFAId, ...lockId]; // Include the new IDs here
+const pwdManager1Id = ['pwdmanager1-img-div', 'pwdmanager1'];
+const pwdManager2Id = ['pwdmanager2-img-div', 'pwdmanager2'];
+const twoFAId = ['twoFA'];
+const lockId = ['lock'];
+const all = [...robotId, ...malwaresIds, ...villainId, ...passwordId, ...pwdManager1Id, ...pwdManager2Id, ...twoFAId, ...lockId];
 
 export const intro = [
   {

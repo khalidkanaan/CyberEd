@@ -1,5 +1,4 @@
-import { toggleElements, navigateSlide } from '../../../assets/js/helpers';
-import Slide1 from '../../SafeBrowsing/slides/Slide1';
+import { navigateSlide } from '../../../assets/js/helpers';
 import Slide2 from '../../SafeBrowsing/slides/Slide2';
 import Slide3 from '../../SafeBrowsing/slides/Slide3';
 import Slide4 from '../../SafeBrowsing/slides/Slide4';

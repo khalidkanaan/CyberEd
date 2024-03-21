@@ -179,7 +179,7 @@ function Slide2() {
       <img id="robot" className="speaking-character" src={robot} alt="robot" />
 
       <div id="file-container" className="file-space" style={{display: "none"}}>
-        <img id="file-unopened" className="image file-img" style={style} src={file} alt="file" />
+        <img id="file-unopened" className="file-img" style={style} src={file} alt="file" />
       </div>
       <div id="file-opened-div" style={{display: "none"}}>
         <DraggableImage src={fileOpen} alt="file-opened"/>

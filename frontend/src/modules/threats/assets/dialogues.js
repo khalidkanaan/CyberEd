@@ -1,5 +1,8 @@
 import { toggleElements, createDialogueBox, navigateSlide } from '../../../assets/js/helpers';
 import Slide2 from '../slides/Slide2';
+import Slide3 from '../slides/Slide3';
+import Slide4 from '../slides/Slide4';
+import Slide5 from '../slides/Slide5';
 
 const randySpeaker = ['ransomware-speaker'];
 const ransom = ['give-coin-button', 'bank', 'coin-counter']
@@ -95,7 +98,10 @@ export const ripRandy = [
   { 
     text: 'R.I.P Randy, you will not be forgotten!',
     action: () => toggleElements(['robot']),
-    okActions: () => toggleElements(['robot'], false, true),
+    okActions: [
+      () => toggleElements(['robot'], false, true),
+      () => setTimeout(() => navigateSlide(Slide3), 650)
+    ]
   }
 ];
 
@@ -187,3 +193,195 @@ export const ripVirus = [
     ],
   },
 ]
+
+export const wormsDialogue = [
+  {
+    text: 'NetNova the worm has the overpowered ability of self replication and infecting networks. He can be a bit arrogant, he\'ll teach about his abilities' + 
+          ' but I doubt he will let you in on how to deal with him.',
+    action: () => toggleElements(['wormSpeaker'], false).then(
+            () => toggleElements(['robot', 'worm'])),
+  },
+  {
+    text: 'NetNova: Greetings user! Welcome to the world of worms, where networks are our playground and chaos is our game. Allow me to illuminate the ways of my kind.',
+    action: () => toggleElements(['robot', 'wormSpreading', 'worm-play'], false).then(
+            () => toggleElements(['wormSpeaker', 'worm']))
+  },
+  {
+    text: 'A worm is a clever bit of malware that doesn\'t need a host file to spread. We aren’t like ' +
+          'those basic viruses that attach themselves to files; instead, we roam the digital highways, ' +
+          'replicating ourselves as we go.',
+    action: () => toggleElements(['worm', 'plague'], false).then(
+            () => toggleElements(['wormSpreading', 'worm-play']))
+  },
+  {
+    text: 'Unlike viruses, which rely on human interaction to spread, worms are entirely autonomous. We can exploit vulnerabilities ' +
+          'in networks and systems to spread ourselves far and wide at a very fast pace.',
+    action: () => toggleElements(['wormSpreading', 'tenticle1', 'tenticle2', 'tenticle3'], false).then(
+            () => toggleElements(['plague']))
+  },
+  {
+    text: 'Worms spread like wildfire compared to other malwares. Once unleashed, each one of my tentacles can go on to ' +
+          'infect countless systems in a matter of minutes, creating a digital epidemic that\'s hard to contain.',
+    action: () => toggleElements(['burnPc'], false).then(
+            () => toggleElements(['plague', 'tenticle2', 'tenticle3', 'tenticle1']))
+  },
+  {
+    text: 'And here lies the challenge: our ability to spread rapidly and autonomously makes us incredibly difficult to detect and destroy. ' +
+          'By the time you realize we\'re in your system, we may have already caused significant damage.',
+    action: () => toggleElements(['tenticle1', 'tenticle2', 'tenticle3', 'plague', 'ddos'], false).then(
+            () => toggleElements(['burnPc']))
+  },
+  {
+    text: 'On top of that, we can also trigger a DDoS attack. DDoS stands Distributed Denial of Service ' +
+          'and involves overwhelming a server with a flood of network traffic like visiting a ' +
+          'website with countless fake users in order deny access to legitimate users like yourself.',
+    action: () => toggleElements(['burnPc'], false).then(
+            () => toggleElements(['ddos']))
+  },
+  {
+    text: 'Traditional antivirus softwares may struggle to keep up with newly emerging worm variants, we evolve much ' +
+          'too quickly for the antivirus to keep up. That\'s where firewalls and Network-based Intrusion Detection ' +
+          'and Prevention Systems (IDS/IPS) come into play.',
+    action: () => toggleElements(['ddos'], false).then(
+            () => toggleElements(['noKaspersky', 'firewall']))
+  },
+  {
+    text: 'I won\'t explain to you how to get rid of me, I\'ll let that silly robot handle the rest of the explaination.',
+    okActions: [
+      () => toggleElements(['worm-play', 'noKaspersky', 'firewall', 'wormSpeaker'], false, true),
+      () => setTimeout(() => navigateSlide(Slide4), 650)
+    ],
+  },
+]
+
+export const wormsDialogue2 = [
+  {
+    text: 'Alright, thanks NetNova I\'ll take it from here. As NetNova mentioned, to counter worms you\'ll need a Firewall. Firewalls act as ' +
+          'digital barriers, monitoring and controlling incoming and outgoing network traffic to prevent unauthorized access and ' +
+          'stop malicious activity in its tracks.',
+    action: () => toggleElements(['traffic'], false).then(
+            () => toggleElements(['robot', 'firewall'])),
+  },
+  {
+    text: 'Traffic refers to the data that travels across a network, like information being sent or received between ' +
+          'devices like computers or servers.',
+    action: () => toggleElements(['firewall', 'carTraffic'], false).then(
+            () => toggleElements(['traffic'])),
+  },
+  {
+    text: 'You can thing of traffic kind of like the flow of cars on in an intersection, just like cars move on a road, ' +
+          'data also moves accross a network. Incoming traffic is data coming into your network, and outgoing traffic ' +
+          'is data leaving your network.',
+    action: () => toggleElements(['traffic'], false).then(
+            () => toggleElements(['carTraffic'])),
+  },
+  {
+    text: 'A firewall acts much like the gatekeeper of this fortress, standing guard at the entrance to your network. It inspects all incoming and outgoing traffic, analyzing ' +
+          'each packet of data to determine whether it should be allowed into the network or denied entry.',
+    action: () => toggleElements(['carTraffic'], false).then(
+            () => toggleElements(['firewallFilter'])),
+  },
+  {
+    text: 'It\'s basically a filter that sifts through the digital traffic, letting in trusted data while blocking ' +
+          'anything suspicious or malicious from gaining access to your precious digital kingdom.',
+    action: () => toggleElements(['firewallFilter'])
+  },
+  {
+    text: 'Firewalls can be configured to enforce specific security conditions, such as blocking certain types of ' +
+          'traffic based on their source of origin or restricting access to certain websites or services. ' +
+          'these conditions are known as firewall rules.',
+    action: () => toggleElements(['firewallFilter'], false).then(
+            () => toggleElements(['firewallRules'])),
+  },
+  {
+    text: 'Finally there\'s also Intrusion detection systems (IDS) and intrusion prevention systems (IPS) which are like radars, '+
+          'constantly scanning your network for suspicious behavior and known attack patterns. They can identify and block ' +
+          'worms before they have a chance to wreak havoc.',
+    action: () => toggleElements(['firewallRules', 'firewall-quiz'], false).then(
+            () => toggleElements(['radar'])),
+  },
+  {
+    text: 'Now then, ready or not. Let\'s quiz you on some of the information you\'ve just learnt.',
+    action: () => toggleElements(['radar'], false).then(
+            () => toggleElements(['firewall-quiz'])),
+  },
+];
+
+export const wormsEnd = [
+  {
+    text: 'Good job! If you did\'t do we well on the quiz or if you\'d like to revisit the information you just learnt about Firewalls and IDS/IPS systems then you can click ' +
+          'the SLIDE BACK button in the bottom left corner of the screen to relearn the content. Otherwise, you can click Ok to start the next exercise',
+    okActions: [
+      () => navigateSlide(Slide5),
+    ],
+  },
+];
+
+export const trojanDialogue = [
+  {
+    text: 'In the shadowy corners of the digital realm, DeceptiCode, a cunning Trojan, is addressing the user directly.',
+    action: () => toggleElements(['trojanSpeaker'], false).then(
+            () => toggleElements(['robot', 'trojanGif'])),
+  },
+  {
+    text: 'Greetings, dear user! Welcome to the realm of Trojan horses, where deception is our weapon and trickery ' +
+          'our art. Allow me to enlighten you about our craft.',
+    action: () => toggleElements(['robot', 'trojanImg'], false).then(
+            () => toggleElements(['trojanSpeaker', 'trojanGif'])),
+  },
+  {
+    text: 'A Trojan, my dear user, is a master of disguise among malware. We masquerade as innocent software, ' +
+          'waiting for the opportune moment to strike.',
+    action: () => toggleElements(['trojanGif', 'trojanSoldiers'], false).then(
+            () => toggleElements(['trojanImg'])),
+  },
+  {
+    text: 'Like the cunning wooden horse used to sneak soldiers into Troy, Trojans disguise themselves as legitimate software or' +
+          'files to trick users into installing them. You see, we often masquerade as harmless or ' +
+          'desirable programs, such as games, utilities, or software updates.',
+    action: () => toggleElements(['trojanImg', 'wolfMad'], false).then(
+            () => toggleElements(['trojanSoldiers'])),
+  },
+  {
+    text: 'Once invited in, we silently infiltrate your system, ready to carry out our '+
+          'malicious deeds when the time is right.',
+    action: () => toggleElements(['trojanSoldiers', 'wolfInSheep'], false).then(
+            () => toggleElements(['wolfMad'])),
+  },
+  {
+    text: 'But here\'s the real twist: unlike viruses and worms, we Trojans don\'t replicate ourselves or spread autonomously. '+
+          'Instead, we rely on social engineering tactics to trick users into willingly installing us usually by opening an infected file '+
+          'or clicking on a malicious link. It\'s like inviting a wolf in sheep\'s clothing into your digital home!',
+    action: () => toggleElements(['wolfMad', 'popups'], false).then(
+            () => toggleElements(['wolfInSheep'])),
+  },
+  {
+    text: 'Social engineering is the art of manipulation in the digital realm! It\'s like a digital con game, where '+
+          'we exploit human psychology to gain access to your system. Phishing, for instance, is a common tactic where we send '+
+          'deceptive emails or create fake websites that appear legitimate, tricking users into revealing sensitive information or downloading malicious software.',
+    action: () => toggleElements(['wolfInSheep', 'lightLaughing'], false).then(
+            () => toggleElements(['popups'])),
+  },
+  {
+    text: 'And here\'s the real kicker: Trojans can be challenging to detect because they often appear harmless or legitimate to antivirus software. '+
+          'Unlike viruses, which can be identified through signature-based detection methods, Trojans may require more advanced detection techniques.',
+    action: () => toggleElements(['popups', 'trojanEnemy'], false).then(
+            () => toggleElements(['lightLaughing'])),
+  },
+  {
+    text: 'Behavior analysis is one such technique, where antivirus software monitors the behavior of programs and looks for '+
+          'suspicious activities that could indicate malicious intent. Heuristic scanning, on the other hand, involves analyzing the ' +
+          'code of a program for characteristics commonly associated with malware, even if no specific virus signature is present.',
+    action: () => toggleElements(['lightLaughing', 'robot', 'bigRobot'], false).then(
+            () => toggleElements(['trojanSpeaker', 'trojanEnemy'])),
+  },
+  {
+    text: 'So, dear user, stay wary of our deceptive ways, for in the digital jungle, the Trojan lurks, waiting to strike when least '+
+          'expected. Arm yourself with knowledge and caution, for only then can you outsmart even the craftiest of Trojans like myself!',
+    action: () => toggleElements(['trojanEnemy', 'trojanSpeaker'], false).then(
+            () => toggleElements(['robot', 'bigRobot'])),
+    okActions: [
+      () => toggleElements(['robot', 'bigRobot'], false, true),
+    ],
+  },
+];

@@ -109,7 +109,7 @@ const DialogueBox = ({ dialogues }) => {
       {!isAnimating && (
         <div className={`${isClosing ? 'hidden' : ''}`}>
           <p>{currentDialogue}</p>
-          <button onClick={handleBack} disabled={currentDialogueIndex === 0}>
+          <button onClick={handleBack} disabled={isActionExecuting || currentDialogueIndex === 0}>
             Back
           </button>
           <button onClick={handleNext} disabled={isActionExecuting || (currentDialogueIndex === dialogues.length - 1 && !isDialogueOpen)}> 

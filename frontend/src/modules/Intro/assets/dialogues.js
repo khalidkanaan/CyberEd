@@ -1,7 +1,6 @@
 import { toggleElements, navigateSlide } from '../../../assets/js/helpers';
 import Slide2 from '../slides/Slide2'
 import Slide3 from '../slides/Slide3'
-import Slide2CyberThreats from '../../threats/slides/Slide2' // change to slide 1 later
 
 const robotId = ['robot'];
 const malwaresIds = ['malware-img-div', 'virus', 'ransomware', 'trojan', 'worm', 'antivirus-img-div', 'kaspersky', 'shield'];
@@ -159,10 +158,12 @@ export const intro3 = [
 export const intro3end = [
   {
     text: 'Good job! If you did\'t do we well on the quiz or if you\'d like to revisit the information you just learnt you can click ' +
-          'the SLIDE BACK button in the bottom left corner of the screen to relearn the content. Otherwise, you can click Ok to start ' +
-          'learning about the different types of threats.',
+          'the SLIDE BACK button in the bottom left corner of the screen to relearn the content. Otherwise, you can click Ok to go back ' +
+          'to the module selection menu.',
     okActions: [
-      () => navigateSlide(Slide2CyberThreats),
+      () => setTimeout(() => {
+        window.location.href = '/'
+      }, 1000)
     ],
   },
 ];

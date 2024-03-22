@@ -454,9 +454,20 @@ export const mitmDialogue2 = [
     text: 'Thanks to encryption, we can outsmart those cyber crooks and keep our digital conversations safe and sound! ' +
           'Remember, knowledge is power, so stay curious and keep exploring the exciting world of cybersecurity!',
     okActions: [
-      () => {
-        window.location.href = '/';
-      } 
+      () => setTimeout(() =>{ createDialogueBox(congratsFinish)}, 650)
+    ],
+  },
+];
+
+export const congratsFinish = [
+  {
+    text: 'Congrats on finishing the threats Module! Click ok to navigate back to module selection.',
+    action: () => toggleElements(['Phones', 'mitm2', 'mitmText', 'encryptDecrypt'], false, true).then(
+            () => toggleElements(['robot', 'bigRobot'])),
+    okActions: [
+      () => setTimeout(() => {
+        window.location.href = '/'
+      }, 650)
     ],
   },
 ];

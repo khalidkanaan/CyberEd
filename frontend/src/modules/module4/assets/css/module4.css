@@ -1,0 +1,181 @@
+.new-window {
+    position: absolute;
+    top: 80px;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    background: transparent;
+}
+
+.module-window {
+    position: absolute;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom right, #3498db, #9b59b6);
+    border: 5px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    /* Animation */
+    animation: fadeInAndZoom 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.module-window-module4{
+    position: absolute;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 53%, rgba(0,212,255,1) 96%, rgba(9,9,121,1) 100%);
+    border: 5px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* Animation */
+    animation: fadeInAndZoom 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+@keyframes fadeInAndZoom  {
+    0% {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.back-button {
+    position: absolute;
+    padding: 0.25%;
+    width: 120px;
+    height: 68px;
+    top: 0;
+    left: 0;
+}
+
+.next-button {
+    position: absolute;
+    padding: 0.25%;
+    width: 120px;
+    height: 68px;
+    top: 0;
+    right: 0;
+}
+
+.slide-back-button {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    padding: 15px 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(219, 193, 108);
+    font-family: 'Press Start 2P Regular', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    text-shadow:
+        -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+    cursor: pointer;
+    box-shadow: inset 0 -8px 7px 2px rgba(0, 0, 0, 0.3);
+}
+#my-div {
+    height: 40px;
+     width: 100px;
+    position: absolute;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer; /* Assuming you want a pointer cursor */
+    z-index: 1;
+
+       }
+
+  
+  #my-div img {
+    width: 150px;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 1.2));
+  }
+
+  #my-div2 {
+    height: 40px;
+     width: 50px;
+    position: absolute;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer; /* Assuming you want a pointer cursor */
+    z-index: 2;
+
+       }
+  
+  #my-div2 img {
+    width: 500px;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 1.2));
+  }
+  #my-div3 {
+    height: 40px;
+     width: -5000px;
+    position: absolute;
+    margin-left: -15%;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: left; /* Center horizontally */
+    cursor: pointer; /* Assuming you want a pointer cursor */
+    z-index: 3;
+
+       }
+  
+  #my-div3 img {
+     filter: drop-shadow(0 0 20px rgba(0, 229, 255, 1.2));
+  }
+  #my-div4 {
+    height: 600px;
+     width: 400px;
+    position: absolute;
+    margin-left: -7.5%;
+    margin-top: -21%;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: left; /* Center horizontally */
+    cursor: pointer; /* Assuming you want a pointer cursor */
+    z-index: 9999;
+
+       }
+  
+  #my-div4 img {
+    width: 1600px;
+    opacity: 70%;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 1.2));
+
+   }
+
+
+
+
+
+.element
+{
+position: absolute; background:
+#0f0;
+pointer-events: none;
+width: 10px;
+height: 10px;
+transition: 1s;
+filter: drop-shadow (0 0 5px #0f0) drop-shadow (0 0 25px #0f0)
+hue-rotate(60deg);
+}
+
+
+.moving-div {
+    position: fixed; /* Use fixed or absolute positioning */
+    transform: translateY(-50%); /* Center the div relative to the mouse Y position */
+  }
+  

@@ -10,6 +10,7 @@ import Passwords from "./modules/passwords/Passwords";
 import EmailDefence from "./modules/Module-Email/EmailDefence";
 import CyberIntro from "./modules/Intro/CyberIntro";
 import SafeBrowsing from "./modules/SafeBrowsing/SafeBrowsing";
+import DeviceProtection from "./modules/module4/DeviceProtection";
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
             <Route path="module/passwords" element={<ProtectedRoute><Passwords /></ProtectedRoute>} />
             <Route path="module/emaildefence" element={<ProtectedRoute><EmailDefence /></ProtectedRoute>} />
             <Route path="module/safebrowsing" element={<ProtectedRoute><SafeBrowsing /></ProtectedRoute>} />
+            <Route path="module/module4" element={<ProtectedRoute><DeviceProtection /></ProtectedRoute>} />
+
         </Routes>
       </BrowserRouter>
     </div>

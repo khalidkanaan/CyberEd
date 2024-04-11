@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Press Start 2P Regular';
+    src: url('../../../../../public/PressStart2P-Regular.ttf') format('truetype');
+    /* Add additional formats if available */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 55%;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: 55%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.dialogue-box {
+    overflow: hidden;
+    position: absolute;
+    height: 30%;
+    background-color: rgba(47, 54, 48, 0.4);
+    border: 5px solid white;
+    border-radius: 25px;
+    box-shadow: 0 0 10px black;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Press Start 2P Regular', sans-serif;
+
+    /* Positioning */
+    left: 50%;
+    bottom: 4%;
+    transform: translateX(-50%);
+
+    animation: expand 0.5s ease-out forwards;
+    z-index: 9999999999999999;
+}
+
+.dialogue-box.closing {
+    animation: shrink 0.5s ease-in forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.dialogue-box button {
+    position: absolute;
+    bottom: 20px;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(108, 219, 117);
+    font-family: 'Press Start 2P Regular', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    text-shadow:
+        -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+    cursor: pointer;
+    box-shadow: inset 0 -8px 7px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dialogue-box p {
+    font-size: small;
+    line-height: 1.7;
+    text-shadow:
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+  
+.dialogue-box button:disabled {
+    background-color: rgba(128, 128, 128, 0.801);
+    color: rgb(58, 58, 58);
+}
+
+.dialogue-box button:nth-child(2) {
+    left: 20px;
+}
+
+.dialogue-box button:nth-child(3) {
+    right: 20px;
+}

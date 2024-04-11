@@ -1,0 +1,129 @@
+/* Base image container class */
+.image-container {
+    /* positioning of div */
+    position: absolute;
+    top: 40%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+
+    /* size of div */
+    min-height: 60%;
+    max-height: 64%; /* min-height + 2*padding-top + 2*padding-bottom */
+    max-width: 30%;
+    min-width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    overflow: hidden;
+
+    /* border */
+    border: 5px solid;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific class for overwriting CSS */
+.malware-image-container {
+    border-image: linear-gradient(to left, black, blue  );
+    border-image-slice: 1;
+    left: 18%;
+    
+}
+
+/* Specific class for overwriting CSS */
+.antivirus-image-container {
+    border-image: linear-gradient(to right, blue, cyan);
+    border-image-slice: 1;
+    top: 35.8%;
+    min-height: 1%; /* This will override the min-height from .image-container */
+    width: auto;
+    height: auto;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.robot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#robot .image {
+    width: auto;
+    max-width: 40%;
+    border-radius: 5px;
+}
+
+.module-window {
+    background-color: red;
+}
+
+
+/* CSS for images in the antivirus image container */
+#antivirus-img-div .image {
+  /* Your specific styles for antivirus images here */
+  width: 90%;
+  max-width: 90%;
+  border-radius: 5px;
+  border: 2px solid bluev; /* Example border */
+  object-fit: cover;
+
+
+  /* Add other styles as needed */
+}
+
+/* CSS for images in the malware image container */
+#malware-img-div .image {
+   
+  border: 2px solid blue; /* Example border */
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 5px;
+  /* Add other styles as needed */
+}
+ 
+  
+
+
+
+.cursor{
+
+z-index: 999;
+background: #2696E8;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+pointer-events: none;
+box-shadow: 0 0 20px #2696E8,
+0 0 60px #2696E8,
+0 0 100px #2696E8;
+animation: colors 5s infinite;
+}
+.cursor:before{ content: '';
+position: absolute;
+background: #2696E8; 
+width: 50px;
+height: 50px;
+opacity: 0.2;
+transform: translate(-30%, -30%);
+border-radius: 50%;
+}
+
+
+@keyframes colors{
+0%{
+
+filter: hue-rotate(0deg);
+}
+100%{
+filter: hue-rotate (360deg);
+}
+}

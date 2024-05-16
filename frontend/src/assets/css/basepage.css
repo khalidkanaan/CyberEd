@@ -1,3 +1,7 @@
+:root {
+  --scale: 1;
+}
+
 @keyframes animatedBackground {
   0% { background-position: 0 0; }
   50% { background-position: 100% 0; }
@@ -70,13 +74,13 @@ code {
 .dropdown {
   position: relative;
   display: inline-block;
-  cursor: pointer; /* Add this line */
+  cursor: pointer;
   right: 50px;
 }
   
 .dropdown-content {
-  display: none;
-  min-width: 125px;
+  display: block;
+  min-width: 100%;
   position: absolute;
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -153,7 +157,6 @@ code {
 
 /* Additional styles for dropdown content width */
 .dropdown:hover .dropdown-content {
-  min-width: unset; /* Remove the minimum width */
   width: max-content; /* Set the width to adjust to the content */
 }
 

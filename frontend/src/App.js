@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './assets/css/basepage.css';
+import useZoomScale from "./hooks/useZoomScale";
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -12,6 +13,7 @@ import CyberIntro from "./modules/Intro/CyberIntro";
 import SafeBrowsing from "./modules/SafeBrowsing/SafeBrowsing";
 
 export default function App() {
+  useZoomScale();
   return (
     <div className="App">
       <BrowserRouter>

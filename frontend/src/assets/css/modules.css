@@ -9,14 +9,14 @@
 
 .module-window {
     position: absolute;
-    top: 75px;
+    top: calc(75px * var(--scale));
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(to bottom right, #3498db, #9b59b6);
-    border: 5px solid white;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: calc(5px * var(--scale)) solid white;
+    border-radius: calc(15px * var(--scale));
+    box-shadow: 0 0 calc(10px * var(--scale)) rgba(0, 0, 0, 0.5);
 
     /* Animation */
     animation: fadeInAndZoom 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
@@ -35,18 +35,18 @@
 
 .back-button {
     position: absolute;
-    padding: 0.25%;
-    width: 120px;
-    height: 68px;
+    padding: calc(0.25% * var(--scale));
+    width: calc(120px * var(--scale));
+    height: calc(68px * var(--scale));
     top: 0;
     left: 0;
-}
+  }
 
 .next-button {
     position: absolute;
-    padding: 0.25%;
-    width: 120px;
-    height: 68px;
+    padding: calc(0.25% * var(--scale));
+    width: calc(120px * var(--scale));
+    height: calc(68px * var(--scale));
     top: 0;
     right: 0;
 }
